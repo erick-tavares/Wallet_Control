@@ -1,5 +1,5 @@
-*git config --global user.name ""
-*git config --global user.email ""
+*git config --global user.name " "
+*git config --global user.email " "
  
 *git init   = cria um novo repositorio local
 *git clone = copia o repositorio
