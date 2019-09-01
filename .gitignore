@@ -1,5 +1,5 @@
 ### Eclipse ###
-.metadata
+*.metadata
 bin/
 tmp/
 *.tmp
@@ -7,7 +7,6 @@ tmp/
 *.swp
 *~.nib
 local.properties
-.settings/
 .loadpath
 .recommenders
 
