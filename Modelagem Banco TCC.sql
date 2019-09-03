@@ -1,5 +1,7 @@
 Modelagem De Tabelas Banco 
 
+create database wallet_control;
+
 *Cadastro
 NOME
 EMAIL
