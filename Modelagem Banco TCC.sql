@@ -23,3 +23,4 @@ id int not null auto_increment primary key,
 descricao varchar(80) not null,
 valor double not null
 );
+
