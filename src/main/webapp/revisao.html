@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Revisao JS</title>
+<script type="text/javascript" src="revisao.js"></script>
+<script type="text/javascript">
+		//function exibeNome() {
+			//se for adiciondo var na frente da variavel não é possivel chamar o X
+			//somente acessivel dentro do escopo da função sem o var, acessivel fora(global)
+			//x = 10;
+			//x = "Oi"
+		//}
+		// exibeNome();
+		// document.write("oi");
+		// document.write(x);
+
+		function exibeNome(){
+			var elNome = document.getElementById('txtNome');
+			var strNome = elNome.value;
+
+			var elDisplay = document.getElementById('display');
+				elDisplay.innerText = strNome;
+		}
+</script>
+</head>
+
+<body>
+	<div id="campos">
+		Nome: 	<input type="text" id="txtNome" value="" value=""/> 
+				<input type="button" value="+" onclick="novocontato()" /> 
+				<input type="button" value="Ok" onclick="exibeNome()" />
+	</div>
+	<div id="display"></div>
+	
+
+</body>
+</html>
