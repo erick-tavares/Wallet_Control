@@ -2,24 +2,11 @@ Modelagem De Tabelas Banco
 
 create database wallet_control;
 
-*Cadastro
-NOME
-EMAIL
-SENHA
-
 create table cadastro (
 id int not null auto_increment primary key,
 email varchar(80) not null,
 senha varchar(50) not null
 );
-
-*Despesas
-DESCRICAO
-TIPO
-VALOR
-DATA
-REPETITIVO
-STATUS
 
 create table desespesa (
 id int not null auto_increment primary key,
@@ -31,8 +18,6 @@ status boolean,
 parcela int(100)
 );
 
-
-*Entradas
 create table renda (
 id int not null auto_increment primary key,
 descricao varchar(80) not null,
