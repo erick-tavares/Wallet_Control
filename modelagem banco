@@ -1,0 +1,32 @@
+Modelagem De Tabelas Banco 
+
+create database wallet_control;
+
+create table usario (
+id_usuario int not null auto_increment primary key,
+email varchar(80) not null,
+senha varchar(50) not null,
+);
+
+create table despesa (
+id_despesa int not null auto_increment primary key,
+descricao_despesa varchar(80) not null,
+categoria varchar(80) not null,
+data_venc date not null,
+valor_despesa double (10,2) not null,
+prioridade varchar(50),
+status boolean,
+parcela int (2),
+usuario_id int,
+foreign key (usuario_id)references usuario(id_usuario)
+
+);
+
+create table renda (
+id_renda int not null auto_increment primary key,
+descricao_renda varchar(80) not null,
+valor_renda double (10,2)not null,
+usuario_id int,
+foreign key (usuario_id)references usuario(id_usuario)
+);
+
