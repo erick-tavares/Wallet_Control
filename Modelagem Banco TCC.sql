@@ -1,40 +1,40 @@
-Modelagem De Tabelas Banco 
+
 
 create database wallet_control;
 
-*Cadastro
-NOME
-EMAIL
-SENHA
-
-create table cadastro (
-id int not null auto_increment primary key,
-email varchar(80) not null,
-senha varchar(50) not null
-);
-
-*Despesas
-DESCRICAO
-TIPO
-VALOR
-DATA
-REPETITIVO
-STATUS
-
-create table desespesa (
-id int not null auto_increment primary key,
-descricao varchar(80) not null,
-categoria varchar(80) not null,
-data_venc date not null,
-prioridade varchar(50),
-status boolean,
-parcela int(100)
-);
+CREATE TABLE `despesa` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `DESCRICAO_DESPESA` varchar(80) NOT NULL,
+  `CATEGORIA` varchar(80) NOT NULL,
+  `DATA_VENC` date NOT NULL,
+  `VALOR_DESPESA` decimal(10,2) NOT NULL,
+  `PRIORIDADE` varchar(50) DEFAULT NULL,
+  `STATUS` tinyint(4) NOT NULL,
+  `PARCELA` int(2) DEFAULT NULL,
+  `ID_USUARIO` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `USUARIO_DESPESA_FK` (`ID_USUARIO`),
+  CONSTRAINT `USUARIO_DESPESA_FK` FOREIGN KEY (`ID_USUARIO`) REFERENCES `usuario` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
 
-*Entradas
-create table renda (
-id int not null auto_increment primary key,
-descricao varchar(80) not null,
-valor double not null
-);
+------------------------------------
+
+CREATE TABLE `renda` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `DESCRICAO_RENDA` varchar(80) NOT NULL,
+  `VALOR_RENDA` decimal(10,2) NOT NULL,
+  `ID_USUARIO` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `USUARIO_RENDA_FK` (`ID_USUARIO`),
+  CONSTRAINT `USUARIO_RENDA_FK` FOREIGN KEY (`ID_USUARIO`) REFERENCES `usuario` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+-------------------------------------
+
+CREATE TABLE `usuario` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `EMAIL` varchar(80) NOT NULL,
+  `SENHA` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
