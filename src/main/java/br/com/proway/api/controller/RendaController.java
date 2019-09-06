@@ -16,35 +16,34 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.proway.api.dao.ChamadoDAO;
-import br.com.proway.api.model.Chamado;
-import br.com.proway.api.model.util.Status;
+import br.com.proway.api.dao.RendaDAO;
+import br.com.proway.api.model.Renda;
 
-@Path("chamados")
-public class ChamadoController {
+@Path("renda")
+public class RendaController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<Chamado> listChamados() {
+	public List<Renda> listRenda() {
 		try {
-			ChamadoDAO ChamadoDAO = new ChamadoDAO();
-			return ChamadoDAO.listar();
+			RendaDAO rendaDAO = new RendaDAO();
+			return rendaDAO.listar();
 		} catch (Exception ex) {
-			Logger.getLogger(ChamadoController.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("{id}/")
-	public Chamado getChamado(@PathParam("id") long id) {
+	@Path("{ID}/")
+	public Renda getRenda(@PathParam("ID") long ID) {
 		try {
-			ChamadoDAO ChamadoDAO = new ChamadoDAO();
-			return ChamadoDAO.selecionar(id);
+			RendaDAO rendaDAO = new RendaDAO();
+			return rendaDAO.selecionar(ID);
 		} catch (Exception ex) {
-			Logger.getLogger(ChamadoController.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -52,14 +51,14 @@ public class ChamadoController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(Chamado chamado) {
+	public Response create(Renda renda) {
 		try {
-			ChamadoDAO ChamadoDAO = new ChamadoDAO();
-			ChamadoDAO.inserir(chamado);
+			RendaDAO rendaDAO = new RendaDAO();
+			rendaDAO.inserir(renda);
 
 			return Response.status(Response.Status.CREATED).build();
 		} catch (Exception ex) {
-			Logger.getLogger(ChamadoController.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -67,15 +66,15 @@ public class ChamadoController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response update(Chamado chamado) {
+	public Response update(Renda renda) {
 		try {
-			chamado.setStatus(Status.PENDENTE);
+			
 
-			ChamadoDAO ChamadoDAO = new ChamadoDAO();
-			ChamadoDAO.alterar(chamado);
+			RendaDAO rendaDAO = new RendaDAO();
+			rendaDAO.alterar(renda);
 			return Response.status(Response.Status.NO_CONTENT).build();
 		} catch (Exception ex) {
-			Logger.getLogger(ChamadoController.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -84,11 +83,11 @@ public class ChamadoController {
 	@Path("{id}/")
 	public Response delete(@PathParam("id") long id) {
 		try {
-			ChamadoDAO ChamadoDAO = new ChamadoDAO();
-			ChamadoDAO.excluir(id);
+			RendaDAO rendaDAO = new RendaDAO();
+			rendaDAO.excluir(id);
 			return Response.status(Response.Status.OK).build();
 		} catch (Exception ex) {
-			Logger.getLogger(ChamadoController.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -97,15 +96,15 @@ public class ChamadoController {
 	@Path("{id}/")
 	public Response concluir(@PathParam("id") long id) {
 		try {
-			ChamadoDAO ChamadoDAO = new ChamadoDAO();
+			RendaDAO rendaDAO = new RendaDAO();
 
-			Chamado c = ChamadoDAO.selecionar(id);
-			c.setStatus(Status.FECHADO);
+			Renda c = rendaDAO.selecionar(id);
+		
 
-			ChamadoDAO.alterar(c);
+			rendaDAO.alterar(c);
 			return Response.status(Response.Status.ACCEPTED).build();
 		} catch (Exception ex) {
-			Logger.getLogger(ChamadoController.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
