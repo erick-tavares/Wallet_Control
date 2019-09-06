@@ -1,4 +1,4 @@
-CREATE DATABASE exemplo_jdbc;
+CREATE DATABASE wallet_control;
 
 CREATE TABLE `usuario` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,

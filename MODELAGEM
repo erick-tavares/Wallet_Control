@@ -2,6 +2,7 @@
 CREATE TABLE `usuario` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `EMAIL` varchar(80) CHARACTER SET latin1 NOT NULL,
+  `NOME`  varchar(80) NOT NULL,
   `SENHA` varchar(50) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
