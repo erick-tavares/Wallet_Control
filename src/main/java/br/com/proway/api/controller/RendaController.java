@@ -80,11 +80,11 @@ public class RendaController {
 	}
 
 	@DELETE
-	@Path("{id}/")
-	public Response delete(@PathParam("id") long id) {
+	@Path("{ID}/")
+	public Response delete(@PathParam("ID") long ID) {
 		try {
 			RendaDAO rendaDAO = new RendaDAO();
-			rendaDAO.excluir(id);
+			rendaDAO.excluir(ID);
 			return Response.status(Response.Status.OK).build();
 		} catch (Exception ex) {
 			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
@@ -93,12 +93,12 @@ public class RendaController {
 	}
 
 	@PUT
-	@Path("{id}/")
-	public Response concluir(@PathParam("id") long id) {
+	@Path("{ID}/")
+	public Response concluir(@PathParam("ID") long ID) {
 		try {
 			RendaDAO rendaDAO = new RendaDAO();
 
-			Renda c = rendaDAO.selecionar(id);
+			Renda c = rendaDAO.selecionar(ID);
 		
 
 			rendaDAO.alterar(c);
