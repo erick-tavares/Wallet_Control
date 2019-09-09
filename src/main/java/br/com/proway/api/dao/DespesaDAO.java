@@ -57,7 +57,7 @@ public class DespesaDAO {
 			stmt.setString(5, despesa.getPrioridade());
 			stmt.setString(6, despesa.getStatus().toString());
 			stmt.setString(7, despesa.getPrioridade());
-			
+			stmt.setLong(8, despesa.getId());
 
 			linhasAfetadas = stmt.executeUpdate();
 			this.conexao.commit();
@@ -87,7 +87,7 @@ public class DespesaDAO {
 	}
 
 	public Despesa selecionar(long id) throws SQLException, ClassNotFoundException {
-		StringBuilder sqlQuery = new StringBuilder("SELECT * FROM despesa");
+		String sqlQuery = "SELECT * FROM despesa";
 		
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
@@ -128,12 +128,12 @@ public class DespesaDAO {
 
 		d.setId(resultSet.getLong("ID"));
 		d.setDescDespesa(resultSet.getString("DESCRICAO_DESPESA"));
-		d.setCatDespesa(resultSet.getString("mensagem"));
-		d.setDtVenc(resultSet.getDate("status"));
-		d.setValorDespesa(resultSet.getDouble("assunto"));
-		d.setPrioridade(resultSet.getString("mensagem"));
-		d.setStatus(Status.valueOf(resultSet.getString("status")));
-		d.setPrioridade(resultSet.getString("assunto"));
+		d.setCatDespesa(resultSet.getString("CATEGORIA"));
+		d.setDtVenc(resultSet.getDate()("DATA_VENC"));
+		d.setValorDespesa(resultSet.getDouble("VALOR_DESPESA"));
+		d.setPrioridade(resultSet.getString("PRIORIDADE"));
+		d.setStatus(Status.valueOf(resultSet.getString("STATUS")));
+		d.setParcela(resultSet.getInt("PARCELA"));
 
 		return d;
 	}
