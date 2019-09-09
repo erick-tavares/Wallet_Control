@@ -36,8 +36,15 @@ CRIANDO NOVA BRANCH ======
 
 FAZENDO UM MERGE=======
 
-entre na branch q vai receber os arquivos e digite:
+- entre na branch q vai receber os arquivos 
+- de o git pull para atualizar a branch
+- e digite:
 git merge (o nome da branch que vai enviar os arquivos)
+
+-na tela de mensagem de merge:
+"i" insere menssagem
+":wq" sai da edição
+
 
 Curso Udemy gratuito sobre Git
 https://www.udemy.com/course/git-e-github-para-iniciantes/learn/lecture/5120598#overview
