@@ -27,7 +27,7 @@ public class RendaDAO {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			stmt.setString(1, renda.getDESCRICAO_RENDA());
 			stmt.setDouble(2, renda.getVALOR_RENDA());
-			stmt.setDouble(3, renda.getDATA_RENDA());
+			stmt.setString(3, renda.getDATA_RENDA().toString());
 			stmt.execute();
 			
 			this.conexao.commit();
@@ -47,7 +47,7 @@ public class RendaDAO {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			stmt.setString(1, renda.getDESCRICAO_RENDA());
 			stmt.setDouble(2, renda.getVALOR_RENDA());
-			stmt.setDouble(3, renda.getDATA_RENDA());
+			stmt.setString(3, renda.getDATA_RENDA().toString());
 			stmt.setLong(4, renda.getId());
 
 			linhasAfetadas = stmt.executeUpdate();
@@ -120,6 +120,7 @@ public class RendaDAO {
 		c.setId(resultSet.getLong("ID"));
 		c.setDESCRICAO_RENDA(resultSet.getString("DESCRICAO_RENDA"));
 		c.setVALOR_RENDA(resultSet.getDouble("VALOR_RENDA"));
+		c.setDATA_RENDA(resultSet.getDate("DATA_RENDA"));
 		
 		return c;
 	}

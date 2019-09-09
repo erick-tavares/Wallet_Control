@@ -1,5 +1,6 @@
 package br.com.proway.api.model;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Renda {
@@ -37,20 +38,24 @@ public class Renda {
 	public void setVALOR_RENDA(double VALOR_RENDA) {
 		this.VALOR_RENDA = VALOR_RENDA;
 	}
-	public double getDATA_RENDA() {
-		return VALOR_RENDA;
+	public LocalDate getDATA_RENDA() {
+		return DATA_RENDA;
 	}
 
-	public void setDATA_RENDA(LocalDate DATA_RENDA) {
-		this.DATA_RENDA = DATA_RENDA;
+	public void setDATA_RENDA(LocalDate date) {
+		this.DATA_RENDA = date;
 	}
 
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((DATA_RENDA == null) ? 0 : DATA_RENDA.hashCode());
+		result = prime * result + ((DESCRICAO_RENDA == null) ? 0 : DESCRICAO_RENDA.hashCode());
 		result = prime * result + (int) (ID ^ (ID >>> 32));
+		long temp;
+		temp = Double.doubleToLongBits(VALOR_RENDA);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
@@ -63,13 +68,25 @@ public class Renda {
 		if (getClass() != obj.getClass())
 			return false;
 		Renda other = (Renda) obj;
+		if (DATA_RENDA == null) {
+			if (other.DATA_RENDA != null)
+				return false;
+		} else if (!DATA_RENDA.equals(other.DATA_RENDA))
+			return false;
+		if (DESCRICAO_RENDA == null) {
+			if (other.DESCRICAO_RENDA != null)
+				return false;
+		} else if (!DESCRICAO_RENDA.equals(other.DESCRICAO_RENDA))
+			return false;
 		if (ID != other.ID)
+			return false;
+		if (Double.doubleToLongBits(VALOR_RENDA) != Double.doubleToLongBits(other.VALOR_RENDA))
 			return false;
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Renda [ID=" + ID + ", DESCRICAO_RENDA=" + DESCRICAO_RENDA + ", VALOR_RENDA=" + VALOR_RENDA + "]";
-	}
+	
+
+	
+	
 }
