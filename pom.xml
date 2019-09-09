@@ -2,19 +2,18 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.com.proway.api</groupId>
-	<artifactId>api_proway</artifactId>
-	<version>1.5.0-SNAPSHOT</version>
+	<groupId>br.com.entra21.walletControl</groupId>
+	<artifactId>wallet-control</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>api_proway</name>
+	<name>Wallet Control</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-
 	<dependencies>
 
 		<dependency>
@@ -69,37 +68,6 @@
 			<version>1.1.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.glassfish.grizzly</groupId>
-			<artifactId>grizzly-framework</artifactId>
-			<version>2.4.4</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.glassfish.grizzly</groupId>
-			<artifactId>grizzly-http</artifactId>
-			<version>2.4.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.glassfish.grizzly</groupId>
-			<artifactId>grizzly-http-server</artifactId>
-			<version>2.4.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.glassfish.jersey.containers</groupId>
-			<artifactId>jersey-container-servlet</artifactId>
-			<version>2.29</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.glassfish.jersey.containers</groupId>
-			<artifactId>jersey-container-grizzly2-http</artifactId>
-			<version>2.29</version>
-		</dependency>
-
 
 	</dependencies>
 
@@ -118,8 +86,5 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
 	</build>
-
-
 </project>

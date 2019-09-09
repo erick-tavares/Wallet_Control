@@ -1,6 +1,6 @@
 # Wallet Control
 
-<h4>Wallet Control È um programa que controla lanÁamentos futuros, contas em atraso, contas pagas e gastos diversos, podendo ser filtrado por categoria, prioridade ou data, dando ao usu·rio o melhor controle de suas despesas mensais.</h4>
+<h4>Wallet Control √© um programa que controla lan√ßamentos futuros, contas em atraso, contas pagas e gastos diversos, podendo ser filtrado por categoria, prioridade ou data, dando ao usu√°rio um melhor controle de suas despesas mensais.</h4>
 
 **_Tecnologias usadas_**
 <ul>
@@ -13,4 +13,15 @@
 <li> Html - Bootstap Studio </li>
 <li>javaScript - jQuery - AngularJS</li>
 <li>CSS</li>
+<li>GitHub</li>
 </ul>
+
+Este projeto foi desenvolvido para o TCC do programa **Entra 21** de 2019, na cidade de Blumenau - SC.
+
+Desenvolvedores:
+<li>Erick Eduardo Tavares</li>
+<li>Rafael </li>
+<li>Anderson Espindola</li>
+<li>Josu√© Kujat </li>
+
+https://github.com/erick-tavares/Wallet_Control
