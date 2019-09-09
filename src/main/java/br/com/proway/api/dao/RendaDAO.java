@@ -116,8 +116,8 @@ public class RendaDAO {
 		Renda c = new Renda();
 
 		c.setId(resultSet.getLong("ID"));
-		c.setDESCRICAO_RENDA(resultSet.getString("descricao_renda"));
-		c.setVALOR_RENDA(resultSet.getString("valor_renda"));
+		c.setDESCRICAO_RENDA(resultSet.getString("DESCRICAO_RENDA"));
+		c.setVALOR_RENDA(resultSet.getString("VALOR_RENDA"));
 		
 		return c;
 	}
