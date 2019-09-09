@@ -1,4 +1,3 @@
-CREATE DATABASE wallet_control;
 
 CREATE TABLE `usuario` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -15,7 +14,7 @@ CREATE TABLE `despesa` (
   `DATA_VENC` date NOT NULL,
   `VALOR_DESPESA` decimal(10,2) NOT NULL,
   `PRIORIDADE` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
-  `STATUS` tinyint(4) NOT NULL,
+  `STATUS` varchar(20) CHARACTER SET latin1 NOT NULL,
   `PARCELA` int(2) DEFAULT NULL,
   `ID_USUARIO` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`),
