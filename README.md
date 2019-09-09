@@ -20,7 +20,7 @@ Este projeto foi desenvolvido para o TCC do programa **Entra 21** de 2019, na ci
 
 Desenvolvedores:
 <li>Erick Eduardo Tavares</li>
-<li>Rafael </li>
+<li>Rafael Henrique da Silva</li>
 <li>Anderson Espindola</li>
 <li>Josué Kujat </li>
 
