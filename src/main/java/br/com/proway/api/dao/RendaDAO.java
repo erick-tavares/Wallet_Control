@@ -21,12 +21,13 @@ public class RendaDAO {
 
 	public Long inserir(Renda renda) throws SQLException, ClassNotFoundException {
 		Long ID = null;
-		String sqlQuery = "INSERT INTO chamado (DESCRICAO_RENDA, VALOR_RENDA) VALUES (?, ?) ";
+		String sqlQuery = "INSERT INTO chamado (DESCRICAO_RENDA, VALOR_RENDA, DATA_RENDA) VALUES (?, ?, ?) ";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			stmt.setString(1, renda.getDESCRICAO_RENDA());
-			stmt.setString(2, renda.getVALOR_RENDA().toString());
+			stmt.setDouble(2, renda.getVALOR_RENDA());
+			stmt.setDouble(3, renda.getDATA_RENDA());
 			stmt.execute();
 			
 			this.conexao.commit();
@@ -39,13 +40,14 @@ public class RendaDAO {
 	}
 
 	public int alterar(Renda renda) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "UPDATE renda SET DESCRICAO_RENDA = ?, VALOR_RENDA = ? WHERE ID = ?";
+		String sqlQuery = "UPDATE renda SET DESCRICAO_RENDA = ?, VALOR_RENDA = ?, DATA_RENDA = ?, WHERE ID = ?";
 		int linhasAfetadas = 0;
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			stmt.setString(1, renda.getDESCRICAO_RENDA());
-			stmt.setString(2, renda.getVALOR_RENDA().toString());
+			stmt.setDouble(2, renda.getVALOR_RENDA());
+			stmt.setDouble(3, renda.getDATA_RENDA());
 			stmt.setLong(4, renda.getId());
 
 			linhasAfetadas = stmt.executeUpdate();
@@ -117,7 +119,7 @@ public class RendaDAO {
 
 		c.setId(resultSet.getLong("ID"));
 		c.setDESCRICAO_RENDA(resultSet.getString("DESCRICAO_RENDA"));
-		c.setVALOR_RENDA(resultSet.getString("VALOR_RENDA"));
+		c.setVALOR_RENDA(resultSet.getDouble("VALOR_RENDA"));
 		
 		return c;
 	}

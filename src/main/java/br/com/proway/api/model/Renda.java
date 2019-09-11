@@ -1,12 +1,16 @@
 package br.com.proway.api.model;
 
+import java.time.LocalDate;
+
 public class Renda {
 
 	private long ID;
 
 	private String DESCRICAO_RENDA;   
 
-	private String VALOR_RENDA; 
+	private double VALOR_RENDA;
+
+	private LocalDate DATA_RENDA = LocalDate.of(0,0,0);; 
 
 	
 
@@ -26,12 +30,19 @@ public class Renda {
 		this.DESCRICAO_RENDA = DESCRICAO_RENDA;
 	}
 
-	public String getVALOR_RENDA() {
+	public double getVALOR_RENDA() {
 		return VALOR_RENDA;
 	}
 
-	public void setVALOR_RENDA(String VALOR_RENDA) {
+	public void setVALOR_RENDA(double VALOR_RENDA) {
 		this.VALOR_RENDA = VALOR_RENDA;
+	}
+	public double getDATA_RENDA() {
+		return VALOR_RENDA;
+	}
+
+	public void setDATA_RENDA(LocalDate DATA_RENDA) {
+		this.DATA_RENDA = DATA_RENDA;
 	}
 
 	
