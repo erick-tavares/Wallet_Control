@@ -22,7 +22,7 @@ public class DespesaDAO {
 
 	public Long inserir(Despesa despesa) throws SQLException, ClassNotFoundException {
 		Long id = null;
-		String sqlQuery = "INSERT INTO despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ";
+		String sqlQuery = "INSERT INTO despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA) VALUES (?, ?, ?, ?, ?, ?, ?) ";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
@@ -33,7 +33,6 @@ public class DespesaDAO {
 			stmt.setString(5, despesa.getPrioridade());
 			stmt.setString(6, despesa.getStatus().toString());
 			stmt.setString(7, despesa.getParcela() + "");
-			stmt.setString(8, despesa.getIdUsuario() + "");
 			stmt.execute();
 			
 			this.conexao.commit();
@@ -46,15 +45,19 @@ public class DespesaDAO {
 	}
 
 	public int alterar(Despesa despesa) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "UPDATE despesa SET DESCRICAO_DESPESA = ?, CATEGORIA = ?, DATA_VENC = ?, VALOR_DESPESA = ?, PRIORIDADE = ?, STATUS = ?, PARCELA = ?,   WHERE id = ?";
+		String sqlQuery = "UPDATE despesa SET DESCRICAO_DESPESA = ?, CATEGORIA = ?, DATA_VENC = ?, VALOR_DESPESA = ?, PRIORIDADE = ?, STATUS = ?, PARCELA = ?,   WHERE ID = ?";
 		int linhasAfetadas = 0;
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			stmt.setString(1, despesa.getAssunto());
-			stmt.setString(2, despesa.getStatus().toString());
-			stmt.setString(3, despesa.getMensagem());
-			stmt.setLong(4, despesa.getId());
+			stmt.setString(1, despesa.getDescDespesa());
+			stmt.setString(2, despesa.getCatDespesa());
+			stmt.setString(3, despesa.getDtVenc().toString());
+			stmt.setDouble(4, despesa.getValorDespesa());
+			stmt.setString(5, despesa.getPrioridade());
+			stmt.setString(6, despesa.getStatus().toString());
+			stmt.setString(7, despesa.getPrioridade());
+			
 
 			linhasAfetadas = stmt.executeUpdate();
 			this.conexao.commit();
@@ -86,8 +89,6 @@ public class DespesaDAO {
 	public Despesa selecionar(long id) throws SQLException, ClassNotFoundException {
 		StringBuilder sqlQuery = new StringBuilder("SELECT * FROM despesa");
 		
-		
-
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			stmt.setLong(1, id);
@@ -96,18 +97,11 @@ public class DespesaDAO {
 			if (rs.next()) {
 				return parser(rs);
 			}
-			
-			
-			if(restricao de tela) {
-				sqlQuery.append("WHERE id = ?");
-			}
-			
-			sqlQuery.append(" order by 1");
 		} catch (SQLException e) {
 			throw e;
 		}
 
-		return sqlQuery;
+		return null;
 	}
 
 	public List<Despesa> listar() throws SQLException, ClassNotFoundException {
@@ -132,10 +126,14 @@ public class DespesaDAO {
 	private Despesa parser(ResultSet resultSet) throws SQLException {
 		Despesa d = new Despesa();
 
-		d.setId(resultSet.getLong("id"));
-		d.setAssunto(resultSet.getString("assunto"));
-		d.setMensagem(resultSet.getString("mensagem"));
+		d.setId(resultSet.getLong("ID"));
+		d.setDescDespesa(resultSet.getString("DESCRICAO_DESPESA"));
+		d.setCatDespesa(resultSet.getString("mensagem"));
+		d.setDtVenc(resultSet.getDate("status"));
+		d.setValorDespesa(resultSet.getDouble("assunto"));
+		d.setPrioridade(resultSet.getString("mensagem"));
 		d.setStatus(Status.valueOf(resultSet.getString("status")));
+		d.setPrioridade(resultSet.getString("assunto"));
 
 		return d;
 	}
