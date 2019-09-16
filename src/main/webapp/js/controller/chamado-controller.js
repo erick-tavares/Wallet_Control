@@ -2,7 +2,7 @@ appEntra21.controller("chamadoController", function($scope, $http) {
 
 	$scope.listaChamado = [];
 	$scope.chamado = {};
-	var urlApi = 'http://localhost:8080/wallet_control/rest/';
+	var urlApi = 'http://localhost:8080/walletControl/rest/';
 
 	$scope.listarChamados = function() {
 		$http({
