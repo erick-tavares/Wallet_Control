@@ -1,0 +1,33 @@
+<br>
+<input type="text" ng-model="chamado.id" style="width: 22px;"">
+<input type="text" ng-model="chamado.assunto">
+<input type="text" ng-model="chamado.status">
+<input type="text" ng-model="chamado.mensagem">
+<input type="button" value="Salvar" ng-click="salvarChamado()" />
+<input type="button" value="Desfazer"
+	ng-click="cancelarAlteracaoChamado()" />
+
+<br><br>
+<input type="button" value="Pesquisar" ng-click="listarChamados()" />
+<br><br>
+
+<table border="1">
+	<tr>
+		<td>ID:</td>
+		<td>Assunto:</td>
+		<td>Status:</td>
+		<td>Mensagem:</td>
+		<td>Excluir</td>  
+		<td>Editar</td>
+		<td>Detalhe</td>
+	</tr>
+	<tr ng-repeat="chamado in listaChamado">
+		<td>{{chamado.id }}</td>
+		<td>{{chamado.assunto }}</td>
+		<td>{{chamado.status }}</td>
+		<td>{{chamado.mensagem }}</td>
+		<td><input type="button" value=" X " ng-click="deleteChamado(chamado.id)" /></td>
+		<td><input type="button" value=" edit " ng-click="alterarChamado(chamado)" /></td>
+		<td><a href="chamados/{{chamado.id}}">Detalhe</a></td>			
+	</tr>
+</table>
