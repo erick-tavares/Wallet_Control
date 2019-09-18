@@ -3,8 +3,8 @@ var appEntra21 = angular.module("walletControl", ['ngRoute']);
 appEntra21.config(function($routeProvider, $locationProvider){
     
 	$routeProvider
-    .when("/chamados",{templateUrl:'view/chamado.html', controller:'chamadoController'})
-    .when("/chamados/:id",{templateUrl:'view/chamado-detalhe.html', controller:'chamadoDetalheController'})
+    .when("/despesas",{templateUrl:'view/despesa.html', controller:'despesaController'})
+    .when("/despesas/:id",{templateUrl:'view/despesa-detalhe.html', controller:'despesaDetalheController'})
     .when("/usuario",{templateUrl:'view/usuario.html', controller:'usuarioController'})
     .otherwise({redirectTo:'/'});
 	
