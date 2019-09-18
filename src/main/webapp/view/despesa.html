@@ -1,8 +1,13 @@
 <br>
 <input type="text" ng-model="chamado.id" style="width: 22px;"">
-<input type="text" ng-model="chamado.assunto">
+<input type="text" ng-model="chamado.descDespesa">
+<input type="text" ng-model="chamado.catDespesa">
+<input type="text" ng-model="chamado.dtVenc">
+<input type="text" ng-model="chamado.valorDespesa">
+<input type="text" ng-model="chamado.prioridade">
 <input type="text" ng-model="chamado.status">
-<input type="text" ng-model="chamado.mensagem">
+<input type="text" ng-model="chamado.parcela">
+
 <input type="button" value="Salvar" ng-click="salvarDespesa()" />
 <input type="button" value="Desfazer"
 	ng-click="cancelarAlteracaoDespesa()" />
@@ -28,13 +33,13 @@
 	</tr>
 	<tr ng-repeat="despesa in listaDespesa">
 		<td>{{despesa.id }}</td>
-		<td>{{despesa.assunto }}</td>
+		<td>{{despesa.descDespesa }}</td>
+		<td>{{despesa.catDespesa }}</td>
+		<td>{{despesa.dtVenc }}</td>
+		<td>{{despesa.valorDespesa }}</td>
+		<td>{{despesa.prioridade }}</td>
 		<td>{{despesa.status }}</td>
-		<td>{{despesa.mensagem }}</td>
-		<td>{{despesa.id }}</td>
-		<td>{{despesa.assunto }}</td>
-		<td>{{despesa.status }}</td>
-		<td>{{despesa.mensagem }}</td>
+		<td>{{despesa.parcela }}</td>
 		
 		<td><input type="button" value=" X " ng-click="deleteDespesa(despesa.id)" /></td>
 		<td><input type="button" value=" edit " ng-click="alterarDespesa(despesa)" /></td>
