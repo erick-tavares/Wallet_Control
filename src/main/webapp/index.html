@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html ng-app="appTeste">
-<head>
-<meta charset="UTF-8" />
-<script
-    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-<script src="./js/controllers/indexController.js"></script>
-<title>Teste com angular</title>
+<html ng-app="walletControl">
+
+<head>	 
+	
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+	<script src="./js/app.js"></script>
+	<script src="./js/controller/main-controller.js"></script>
+	<script src="./js/controller/despesa-controller.js"></script>
+	<script src="./js/controller/despesa-detalhe-controller.js"></script>
+	<base href="/walletControl/"> 	
+	<title>Wallet Control</title>
+
 </head>
-<body ng-controller="indexController">
-    Olá {{ nome }} - {{ sobreNome }}
-    <br>
-    
-    <input type="text" ng-model="chamado.assunto">
-    <input type="text" ng-model="chamado.status">
-    <input type="text" ng-model="chamado.mensagem">
-    
-    <input type="button" value="Salvar" ng-click="salvarChamado()">
-    
-    <input type="button" value="Listar" ng-click="listarChamados()">
-    <div ng-repeat="chamado in listaChamado">
-        {{chamado.id +'|'+chamado.assunto+'|'+chamado.status}}
-                            - <input type="button" value="Excluir" ng-click="deletarChamado()">
-            
-    </div>
+
+<body ng-controller="mainController">
+	Template inicial |
+
+	<a href="despesas">Despesas</a>
+	<a href="usuario">Usuário</a>
+	<div ng-view="ng-view"></div>
+	
+	<div>
+	<br><br>
+	<pre>Path | $location.path() = {{$location.path()}}</pre>
+	</div>
+	
 </body>
+
 </html>
