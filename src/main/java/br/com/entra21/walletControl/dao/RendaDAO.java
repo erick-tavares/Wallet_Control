@@ -21,7 +21,7 @@ public class RendaDAO {
 
 	public Long inserir(Renda renda) throws SQLException, ClassNotFoundException {
 		Long ID = null;
-		String sqlQuery = "INSERT INTO chamado (DESCRICAO_RENDA, VALOR_RENDA, DATA_RENDA) VALUES (?, ?, ?) ";
+		String sqlQuery = "INSERT INTO renda (DESCRICAO_RENDA, VALOR_RENDA, DATA_RENDA) VALUES (?, ?, ?) ";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
@@ -40,7 +40,7 @@ public class RendaDAO {
 	}
 
 	public int alterar(Renda renda) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "UPDATE renda SET DESCRICAO_RENDA = ?, VALOR_RENDA = ?, DATA_RENDA = ?, WHERE ID = ?";
+		String sqlQuery = "UPDATE renda SET DESCRICAO_RENDA = ?, VALOR_RENDA = ?, DATA_RENDA = ? WHERE ID = ?";
 		int linhasAfetadas = 0;
 
 		try {
