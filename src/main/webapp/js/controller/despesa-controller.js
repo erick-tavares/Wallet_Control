@@ -1,15 +1,15 @@
-appEntra21.controller("chamadoController", function($scope, $http) {
+appEntra21.controller("despesaController", function($scope, $http) {
 
-	$scope.listaChamado = [];
-	$scope.chamado = {};
+	$scope.listaDespesa = [];
+	$scope.despesa = {};
 	var urlApi = 'http://localhost:8080/walletControl/rest/';
 
 	$scope.listarChamados = function() {
 		$http({
 			method : 'GET',
-			url : urlApi + 'chamados/'
+			url : urlApi + 'despesas/'
 		}).then(function(response) {
-			$scope.listaChamado = response.data;
+			$scope.listaDespesa = response.data;
 		}, function(response) {
 			console.log('error');
 			console.log(response.data);
@@ -17,20 +17,20 @@ appEntra21.controller("chamadoController", function($scope, $http) {
 		});
 	};
 
-	$scope.salvarChamado = function() {
+	$scope.salvarDespesa = function() {
 		var metodo = 'POST';
 
-		if ($scope.chamado.id){
+		if ($scope.despesa.id){
 			metodo = 'PUT';
 		}
 
 		$http({
 			method : metodo,
-			url : urlApi + 'chamados/',
-			data : $scope.chamado
+			url : urlApi + 'despesas/',
+			data : $scope.despesa
 		}).then(function(response) {
-			$scope.listaChamado.push(response.data);
-			$scope.listarChamados();
+			$scope.listaDespesa.push(response.data);
+			$scope.listarDespesa();
 		}, function(response) {
 			console.log('error do salvar');
 			console.log(response.data);
@@ -38,14 +38,14 @@ appEntra21.controller("chamadoController", function($scope, $http) {
 		});
 	};
 
-	$scope.deleteChamado = function(id) {
+	$scope.deleteDespesa = function(id) {
 
 		$http({
 			method : 'DELETE',
-			url : urlApi + 'chamados/' + id
+			url : urlApi + 'despesas/' + id
 		}).then(function(response) {
-			$scope.listaChamado.splice(id, 1);
-			$scope.listarChamados();
+			$scope.listaDespesa.splice(id, 1);
+			$scope.listarDespesas();
 		}, function(response) {
 			console.log('error do salvar');
 			console.log(response.data);
@@ -53,12 +53,12 @@ appEntra21.controller("chamadoController", function($scope, $http) {
 		});
 	};
 
-	$scope.alterarChamado = function(chamado) {
-		$scope.chamado = angular.copy(chamado);
+	$scope.alterarDespesa = function(despesa) {
+		$scope.despesa = angular.copy(despesa);
 	}
 
-	$scope.cancelarAlteracaoChamado = function(chamado) {
-		$scope.chamado = {};
+	$scope.cancelarAlteracaoDespesa = function(despesa) {
+		$scope.despesa = {};
 	};
 
 });
