@@ -45,7 +45,7 @@ public class DespesaDAO {
 	}
 
 	public int alterar(Despesa despesa) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "UPDATE despesa SET DESCRICAO_DESPESA = ?, CATEGORIA = ?, DATA_VENC = ?, VALOR_DESPESA = ?, PRIORIDADE = ?, STATUS = ?, PARCELA = ?,   WHERE ID = ?";
+		String sqlQuery = "UPDATE despesa SET DESCRICAO_DESPESA = ?, CATEGORIA = ?, DATA_VENC = ?, VALOR_DESPESA = ?, PRIORIDADE = ?, STATUS = ?, PARCELA = ?   WHERE ID = ?";
 		int linhasAfetadas = 0;
 
 		try {
