@@ -40,7 +40,11 @@ public class RendaDAO {
 	}
 
 	public int alterar(Renda renda) throws SQLException, ClassNotFoundException {
+<<<<<<< HEAD:src/main/java/br/com/entra21/walletControl/dao/RendaDAO.java
 		String sqlQuery = "UPDATE renda SET DESCRICAO_RENDA = ?, VALOR_RENDA = ?, DATA_RENDA = ?, WHERE ID = ?";
+=======
+		String sqlQuery = "UPDATE renda SET DESCRICAO_RENDA = ?, VALOR_RENDA = ?, DATA_RENDA = ? WHERE ID = ?";
+>>>>>>> 03d1ef9002ac905b5abda138b15d10655299fdf9:src/main/java/br/com/proway/api/dao/RendaDAO.java
 		int linhasAfetadas = 0;
 
 		try {
