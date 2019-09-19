@@ -40,7 +40,9 @@ public class RendaDAO {
 	}
 
 	public int alterar(Renda renda) throws SQLException, ClassNotFoundException {
+
 		String sqlQuery = "UPDATE renda SET DESCRICAO_RENDA = ?, VALOR_RENDA = ?, DATA_RENDA = ? WHERE ID = ?";
+
 		int linhasAfetadas = 0;
 
 		try {
