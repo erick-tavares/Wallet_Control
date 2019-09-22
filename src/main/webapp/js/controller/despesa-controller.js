@@ -4,7 +4,7 @@ appEntra21.controller("despesaController", function($scope, $http) {
 	$scope.despesa = {};
 	var urlApi = 'http://localhost:8080/walletControl/rest/';
 
-	$scope.listarChamados = function() {
+	$scope.listarDespesas = function() {
 		$http({
 			method : 'GET',
 			url : urlApi + 'despesas/'
