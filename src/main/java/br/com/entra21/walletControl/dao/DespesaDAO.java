@@ -11,7 +11,6 @@ import br.com.entra21.walletControl.data.ConexaoMysqlJDBC;
 import br.com.entra21.walletControl.model.Despesa;
 import br.com.entra21.walletControl.model.util.Status;
 
-
 public class DespesaDAO {
 
 	private final ConexaoJDBC conexao;
@@ -103,26 +102,12 @@ public class DespesaDAO {
 
 		return null;
 	}
-	//nas strings recebidas nessa função a seguir (filtro e opcao) serão as que irão dar funcionalidade aos IFs
-	public List<Despesa> listar(String filtro, String opcao) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "SELECT * FROM despesa"; // filtros: CATEGORIA, DATA VENCIMENTO, PRIORIDADE, STATUS
+	
+	public List<Despesa> listar() throws SQLException, ClassNotFoundException {
+		String sqlQuery = "SELECT * FROM despesa ORDER BY id";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			if (filtro == "CAT") {
-				sqlQuery += " WHERE CATEGORIA = ?";
-				stmt.setString(1, opcao);
-			} else if (filtro == "DT_VENC") {
-				sqlQuery += " WHERE DATA_VENC = ?";
-				stmt.setString(1, opcao);
-			} else if (filtro == "PRIOR") {
-				sqlQuery += " WHERE PRIORIDADE = ?";
-				stmt.setString(1, opcao);
-			} else if (filtro == "STAT") {
-				sqlQuery += " WHERE STATUS = ?";
-				stmt.setString(1, opcao);
-			} 
-			
 			ResultSet rs = stmt.executeQuery();
 
 			List<Despesa> despesas = new ArrayList<>();
