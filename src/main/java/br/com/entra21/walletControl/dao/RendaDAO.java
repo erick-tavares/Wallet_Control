@@ -21,7 +21,7 @@ public class RendaDAO {
 
 	public Long inserir(Renda renda) throws SQLException, ClassNotFoundException {
 		Long ID = null;
-		String sqlQuery = "INSERT INTO chamado (DESCRICAO_RENDA, VALOR_RENDA, DATA_RENDA) VALUES (?, ?, ?) ";
+		String sqlQuery = "INSERT INTO renda (DESCRICAO_RENDA, VALOR_RENDA, DATA_RENDA) VALUES (?, ?, ?) ";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
