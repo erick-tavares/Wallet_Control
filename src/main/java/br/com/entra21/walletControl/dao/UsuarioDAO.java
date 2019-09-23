@@ -50,6 +50,7 @@ public class UsuarioDAO {
 			stmt.setLong(4, usuario.getId());
 
 			linhasAfetadas = stmt.executeUpdate();
+
 			this.conexao.commit();
 		} catch (SQLException e) {
 			this.conexao.rollback();
