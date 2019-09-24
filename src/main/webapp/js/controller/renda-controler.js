@@ -13,9 +13,7 @@ appEntra21.controller("rendaController", function($scope, $http, $routeParams) {
 		}).then(function(response) {
 			$scope.listaRenda = response.data;
 		}, function(response) {
-			console.log('error');
-			console.log(response.data);
-			console.log(response.status);
+			console.log('error - listarRenda');
 		});
 	};
 
@@ -34,9 +32,7 @@ appEntra21.controller("rendaController", function($scope, $http, $routeParams) {
 			$scope.listaRenda.push(response.data);
 			$scope.listarRenda();
 		}, function(response) {
-			console.log('error do salvar');
-			console.log(response.data);
-			console.log(response.status);
+			console.log('error - salvarRenda');
 		});
 	};
 
@@ -49,15 +45,9 @@ appEntra21.controller("rendaController", function($scope, $http, $routeParams) {
 			$scope.listaRenda.splice(id, 1);
 			$scope.listarRendas();
 		}, function(response) {
-			console.log('error do salvar');
-			console.log(response.data);
-			console.log(response.status);
+			console.log('error - deleteRenda');
 		});
 	};
-
-	$scope.alterarRenda = function(renda) {
-		$scope.renda = angular.copy(renda);
-	}
 
 	$scope.cancelarAlteracaoRenda = function(renda) {
 		$scope.renda = {};

@@ -27,19 +27,19 @@
                 <th>ID</th>
                 <th>Descrição</th>
                 <th>Valor</th>
-                <th>Data entrada</th>
+                <th>Data de entrada</th>
                 <th class="actions">AÃ§Ãµes</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="renda in listarenda | filter: search">
-                <td>{{renda.id }}</td>
+                <td>{{renda.ID }}</td>
                 <td>{{renda.DESCRICAO_RENDA }}</td>
                 <td>{{renda.VALOR_RENDA }}</td>
                 <td>{{renda.DATA_RENDA }}</td>
                 <td class="actions">
                     <a class="btn btn-success btn-xs" href="rendas/{{renda.id}}">Visualizar</a>
-                    <a class="btn btn-warning btn-xs" href="despesas/edit/{{renda.id}}"  >Editar</a>
+                    <a class="btn btn-warning btn-xs" href="rendas/edit/{{renda.id}}"  >Editar</a>
                     <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal"
                         ng-click="deleteRenda(renda.id)">Excluir</a>
                 </td>
