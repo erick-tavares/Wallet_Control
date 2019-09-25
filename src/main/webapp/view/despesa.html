@@ -1,48 +1,55 @@
-<br>
-<input type="text" ng-model="chamado.id" style="width: 22px;"">
-<input type="text" ng-model="chamado.descDespesa">
-<input type="text" ng-model="chamado.catDespesa">
-<input type="text" ng-model="chamado.dtVenc">
-<input type="text" ng-model="chamado.valorDespesa">
-<input type="text" ng-model="chamado.prioridade">
-<input type="text" ng-model="chamado.status">
-<input type="text" ng-model="chamado.parcela">
+<div id="top" class="row">
+    <div class="col-sm-3">
+        <h2>Itens</h2>
+    </div>
+    <div class="col-sm-6">
 
-<input type="button" value="Salvar" ng-click="salvarDespesa()" />
-<input type="button" value="Desfazer"
-	ng-click="cancelarAlteracaoDespesa()" />
+        <div class="input-group h2">
+            <input name="data[search]" class="form-control" ng-model="search" id="search" type="text" placeholder="Pesquisar Itens">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit" ng-click="listarDespesas()" >
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
 
-<br><br>
-<input type="button" value="Pesquisar" ng-click="listarDespesas()" />
-<br><br>
+    </div>
+    <div class="col-sm-3">
+        <a href="despesas/novo" class="btn btn-primary pull-right h2">Novo Item</a>
+    </div>
+</div> <!-- /#top -->
 
-<table border="1">
-	<tr>
-		<td>ID:</td>
-		<td>Descrição:</td>
-		<td>Categoria:</td>
-		<td>Data de vencimento:</td>
-		<td>Valor:</td>
-		<td>Prioridade:</td>
-		<td>Status:</td>
-		<td>Parcela:</td>
-		
-		<td>Excluir</td>  
-		<td>Editar</td>
-		<td>Detalhe</td>
-	</tr>
-	<tr ng-repeat="despesa in listaDespesa">
-		<td>{{despesa.id }}</td>
-		<td>{{despesa.descDespesa }}</td>
-		<td>{{despesa.catDespesa }}</td>
-		<td>{{despesa.dtVenc }}</td>
-		<td>{{despesa.valorDespesa }}</td>
-		<td>{{despesa.prioridade }}</td>
-		<td>{{despesa.status }}</td>
-		<td>{{despesa.parcela }}</td>
-		
-		<td><input type="button" value=" X " ng-click="deleteDespesa(despesa.id)" /></td>
-		<td><input type="button" value=" edit " ng-click="alterarDespesa(despesa)" /></td>
-		<td><a href="despesas/{{despesa.id}}">Detalhe</a></td>			
-	</tr>
-</table>
+
+<div class="table-responsive col-md-12">
+    <table class="table table-striped" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Vencimento</th>
+                <th>Valor</th>
+                <th>Prioridade</th>
+                <th>Status</th>
+                <th>Parcela</th>
+                <th class="actions">AÃ§Ãµes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="despesa in listadespesa | filter: search">
+                <td>{{despesa.id }}</td>
+                <td>{{despesa.descDespesa }}</td>
+                <td>{{despesa.status }}</td>
+                <td>{{despesa.mensagem }}</td>
+                <td class="actions">
+                    <a class="btn btn-success btn-xs" href="despesas/{{despesa.id}}">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="despesas/edit/{{despesa.id}}"  >Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal"
+                        ng-click="deleteDespesa(despesa.id)">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

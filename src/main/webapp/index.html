@@ -19,74 +19,41 @@
 </head>
 
 <body ng-controller="mainController">
-	
-	
-	<div class="container" id="containerLogin">
-    <a class="links" id="paralogin"></a>
-    <a class="links" id="paracadastro"></a>
-    
-    <div class="content">      
-      <!--FORMULÁRIO DE LOGIN-->
-      <div id="login">
-        <form method="post" action=""> 
-          <h1>Login</h1> 
-          <p> 
-            <label for="email_login">Email</label>
-            <input id="email_login" name="email_login" required="required" type="text" placeholder="exemplo@exemplo.com"/>
-          </p>
-          
-          <p> 
-            <label for="senha_login">Senha</label>
-            <input id="senha_login" name="senha_login" required="required" type="password" placeholder="1234" /> 
-          </p>
-          
-          <br>
-          <p> 
-            <input type="submit" value="Logar" ng-click="salvarUsuario()"/> 
-          </p>
-          
-          <p class="link">
-            Ainda não tem conta?
-            <a href="#paracadastro">Cadastre-se</a>
-          </p>
-        </form>
-      </div>
 
-      <!--FORMULÁRIO DE CADASTRO-->
-      <div id="cadastro">
-        <form method="post" action=""> 
-          <h1>Cadastro</h1> 
-          
-          <p> 
-            <label for="nome_cad">Nome</label>
-            <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Seu nome" />
-          </p>
-          
-          <p> 
-            <label for="email_cad">Email</label>
-            <input id="email_cad" name="email_cad" required="required" type="email" placeholder="exemplo@exemplo.com"/> 
-          </p>
-          
-          <p> 
-            <label for="senha_cad">Senha</label>
-            <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="1234"/>
-          </p>
-          
-          <p> 
-            <input type="submit" value="Cadastrar" ng-click="verificarUsuario()"/> 
-          </p>
-          
-          <p class="link">  
-            Já possui conta?
-            <a href="#paralogin"> Fazer login </a>
-          </p>
-        </form>
-      </div>
-    </div>
-  </div> 
-	
-	<script src="./bootstrap/js/jquery.min.js"></script>
-	<script src="./bootstrap/js/bootstrap.min.js"></script>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Wallet Control</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="despesas">Despesas</a></li>
+                    <li><a href="usuario">Usuário</a></li>
+                    <li><a href="login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="main" class="container-fluid" style="margin-top: 50px">
+    	<div ng-view="ng-view"></div>
+
+
+	    <div>
+	        <br><br>
+	        <pre>Path | $location.path() = {{$location.path()}}</pre>
+	    </div>
+
+	</div>
+    <script src="./bootstrap/js/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
