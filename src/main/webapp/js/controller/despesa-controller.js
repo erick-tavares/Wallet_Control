@@ -1,9 +1,11 @@
-appEntra21.controller("despesaController", function($scope, $http) {
-
+appEntra21.controller("despesaController", function($scope, $http, $routeParams) {
+	
 	$scope.listaDespesa = [];
 	$scope.despesa = {};
+	$scope.despesaSelecionado = {};
+	
 	var urlApi = 'http://localhost:8080/walletControl/rest/';
-
+	
 	$scope.listarDespesas = function() {
 		$http({
 			method : 'GET',
