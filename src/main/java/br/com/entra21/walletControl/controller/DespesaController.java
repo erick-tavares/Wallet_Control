@@ -26,10 +26,10 @@ public class DespesaController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<Despesa> listDespesas(String filtro, String opcao) {
+	public List<Despesa> listDespesas() {
 		try {
 			DespesaDAO DespesaDAO = new DespesaDAO();
-			return DespesaDAO.listar(filtro, opcao);
+			return DespesaDAO.listar();
 		} catch (Exception ex) {
 			Logger.getLogger(DespesaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
