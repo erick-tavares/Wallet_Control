@@ -14,7 +14,6 @@ appEntra21.controller("despesaController", function($scope, $http, $routeParams)
 			$scope.listaDespesa = response.data;
 		}, function(response) {
 			console.log('error - listarDespesa')
-
 		});
 	};
 
