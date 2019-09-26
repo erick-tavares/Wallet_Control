@@ -10,8 +10,6 @@ import br.com.entra21.walletControl.data.ConexaoJDBC;
 import br.com.entra21.walletControl.data.ConexaoMysqlJDBC;
 import br.com.entra21.walletControl.model.Despesa;
 import br.com.entra21.walletControl.model.util.Status;
-import br.com.entra21.walletControl.model.Despesa;
-
 
 public class DespesaDAO {
 
