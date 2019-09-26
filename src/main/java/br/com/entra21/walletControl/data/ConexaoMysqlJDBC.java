@@ -12,7 +12,7 @@ public class ConexaoMysqlJDBC implements ConexaoJDBC {
 
 	private static final String USERNAME = "root";
 
-	private static final String PASSWORD = "123456";
+	private static final String PASSWORD = "";
 
 	private static final String DATABASE_URL = "jdbc:mysql://localhost:3307/wallet_control?useTimezone=true&serverTimezone=UTC";
 
