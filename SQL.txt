@@ -1,5 +1,0 @@
-insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA) VALUES ("desc1", "cat1", "2010-10-10", "200", "prioridade1", "PENDENTE", "3");
-
-insert into renda (DESCRICAO_RENDA, VALOR_RENDA, DATA_RENDA) values ("DESC1", "200", "2010-10-10");
-
-insert into usuario (EMAIL, NOME, SENHA) values ("a@gmail.com", "Adalberto", "abc");
