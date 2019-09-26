@@ -1,3 +1,49 @@
-<div>
-	Aqui vai a tela de rendas
+<div id="top" class="row">
+    <div class="col-sm-3">
+        <h2>Itens</h2>
+    </div>
+    <div class="col-sm-6">
+
+        <div class="input-group h2">
+            <input name="data[search]" class="form-control" ng-model="search" id="search" type="text" placeholder="Pesquisar Itens">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit" ng-click="listarRendas()" >
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+
+    </div>
+    <div class="col-sm-3">
+        <a href="rendas/novo" class="btn btn-primary pull-right h2">Novo Item</a>
+    </div>
+</div> <!-- /#top -->
+
+
+<div class="table-responsive col-md-12">
+    <table class="table table-striped" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data de entrada</th>
+                <th class="actions">AÃ§Ãµes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="renda in listarenda | filter: search">
+                <td>{{renda.ID }}</td>
+                <td>{{renda.DESCRICAO_RENDA }}</td>
+                <td>{{renda.VALOR_RENDA }}</td>
+                <td>{{renda.DATA_RENDA }}</td>
+                <td class="actions">
+                    <a class="btn btn-success btn-xs" href="rendas/{{renda.id}}">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="rendas/edit/{{renda.id}}"  >Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal"
+                        ng-click="deleteRenda(renda.id)">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
