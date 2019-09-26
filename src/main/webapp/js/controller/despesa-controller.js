@@ -13,9 +13,7 @@ appEntra21.controller("despesaController", function($scope, $http, $routeParams)
 		}).then(function(response) {
 			$scope.listaDespesa = response.data;
 		}, function(response) {
-			console.log('error');
-			console.log(response.data);
-			console.log(response.status);
+			console.log('error - listarDespesa')
 		});
 	};
 
@@ -34,9 +32,7 @@ appEntra21.controller("despesaController", function($scope, $http, $routeParams)
 			$scope.listaDespesa.push(response.data);
 			$scope.listarDespesa();
 		}, function(response) {
-			console.log('error do salvar');
-			console.log(response.data);
-			console.log(response.status);
+			console.log('error - salvarDespesa');
 		});
 	};
 
@@ -49,15 +45,9 @@ appEntra21.controller("despesaController", function($scope, $http, $routeParams)
 			$scope.listaDespesa.splice(id, 1);
 			$scope.listarDespesas();
 		}, function(response) {
-			console.log('error do salvar');
-			console.log(response.data);
-			console.log(response.status);
+			console.log('error - deleteDespesa ');
 		});
 	};
-
-	$scope.alterarDespesa = function(despesa) {
-		$scope.despesa = angular.copy(despesa);
-	}
 
 	$scope.cancelarAlteracaoDespesa = function(despesa) {
 		$scope.despesa = {};

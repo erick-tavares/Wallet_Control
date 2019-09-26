@@ -1,8 +1,32 @@
-<div>Detalhes das despesas</div>
-<br>
-<div>
-	ID : {{despesaDetalhe.id}} <br>
-	Assunto : {{despesaDetalhe.assunto}}<br>
-	Status : {{despesaDetalhe.status}}<br>
-	mensagem : {{despesaDetalhe.mensagem}}<br>
-</div>
+<h3 class="page-header">Visualizar Item #{{despesaDetalhe.id}}</h3>
+
+  <div class="row">
+    <div class="col-md-4">
+      <p><strong>ID</strong></p>
+  	  <p>{{despesaDetalhe.id}}.</p>
+    </div>
+
+	<div class="col-md-4">
+      <p><strong>Categoria</strong></p>
+  	  <p>{{despesaDetalhe.categoria}}</p>
+    </div>
+
+    <div class="col-md-8">
+      <p><strong>Mensagem </strong></p>
+  	  <p> {{depesaDetalhe.mensagem}}</p>
+    </div>
+
+      	  <div class="col-md-8">
+  	  	<label for="exampleInputEmail1">Campo Um</label>
+  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor" value="{{despesaDetalhe.mensagem}}">
+  	  </div>
+
+ </div>
+
+ <hr />
+ <div id="actions" class="row">
+   <div class="col-md-12">
+     <a href="despesa/edit/{{despesaDetalhe.id}}" ng-click="salvarDespesa(despesaDetalhe)" class="btn btn-primary">Editar</a>
+	 <a href="despesas" class="btn btn-default">Fechar</a>
+   </div>
+ </div> 
