@@ -1,13 +1,33 @@
-<h3 class="page-header">Editar Despesa</h3>
+<h3 class="page-header">Adicionar Despesa</h3>
 
 <div class="row">
     <div class="form-group col-md-2">
-        <label for="inputID">ID</label>
-        <input type="text" class="form-control" id="inputID" readonly ng-model="despesaDetalhe.id">
+        <label for="inputDescricao">Descri&ccedil;&atilde;o</label>
+        <input type="text" class="form-control" id="inputDescricao" placeholder="Digite o valor" ng-model="despesaDetalhe.descricao">
     </div>
-    <div class="form-group col-md-4">
+     <div class="form-group col-md-2">
         <label for="inputCategoria">Categoria</label>
-        <input type="text" class="form-control" id="inputCategoria" placeholder="Digite o valor" ng-model="despesaDetalhe.categoria">
+        <input type="text" class="form-control" id="inputCategoria" readonly ng-model="despesaDetalhe.categoria">
+    </div>
+     <div class="form-group col-md-2">
+        <label for="inputVencimento">Vencimento</label>
+        <input type="text" class="form-control" id="inputVencimento" readonly ng-model="despesaDetalhe.vencimento">
+    </div>
+     <div class="form-group col-md-2">
+        <label for="inputValor">Valor</label>
+        <input type="text" class="form-control" id="inputValor" readonly ng-model="despesaDetalhe.valor">
+    </div>
+     <div class="form-group col-md-2">
+        <label for="inputPrioridade">Prioridade</label>
+        <input type="text" class="form-control" id="inputPrioridade" readonly ng-model="despesaDetalhe.prioridade">
+    </div>
+     <div class="form-group col-md-2">
+        <label for="inputStatus">Status</label>
+        <input type="text" class="form-control" id="inputStatus" readonly ng-model="despesaDetalhe.status">
+    </div>
+     <div class="form-group col-md-2">
+        <label for="inputParcela">Parcela</label>
+        <input type="text" class="form-control" id="inputParcela" readonly ng-model="despesaDetalhe.parcela">
     </div>
 <hr />
 
