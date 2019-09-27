@@ -37,11 +37,13 @@ public class RendaController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("{id}/")
-	public Renda getRenda(@PathParam("id") long id) {
+	@Path("{ID}/")
+	public Renda getRenda(@PathParam("ID") long ID) {
 		try {
 			RendaDAO RendaDAO = new RendaDAO();
-			return RendaDAO.selecionar(id);
+
+			return RendaDAO.selecionar(ID);
+
 		} catch (Exception ex) {
 			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
@@ -68,6 +70,7 @@ public class RendaController {
 	@Path("/")
 	public Response update(Renda renda) {
 		try {
+
 			RendaDAO RendaDAO = new RendaDAO();
 			RendaDAO.alterar(renda);
 			return Response.status(Response.Status.NO_CONTENT).build();
@@ -78,11 +81,13 @@ public class RendaController {
 	}
 
 	@DELETE
-	@Path("{id}/")
-	public Response delete(@PathParam("id") long id) {
+	@Path("{ID}/")
+	public Response delete(@PathParam("ID") long ID) {
 		try {
 			RendaDAO RendaDAO = new RendaDAO();
-			RendaDAO.excluir(id);
+
+			RendaDAO.excluir(ID);
+
 			return Response.status(Response.Status.OK).build();
 		} catch (Exception ex) {
 			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
@@ -91,12 +96,12 @@ public class RendaController {
 	}
 
 	@PUT
-	@Path("{id}/")
-	public Response concluir(@PathParam("id") long id) {
+	@Path("{ID}/")
+	public Response concluir(@PathParam("ID") long ID) {
 		try {
 			RendaDAO RendaDAO = new RendaDAO();
 
-			Renda c = RendaDAO.selecionar(id);
+			Renda c = RendaDAO.selecionar(ID);
 
 			RendaDAO.alterar(c);
 			return Response.status(Response.Status.ACCEPTED).build();

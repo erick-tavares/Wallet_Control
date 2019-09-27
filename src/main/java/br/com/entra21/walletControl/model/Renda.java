@@ -5,58 +5,55 @@ import java.sql.Date;
 
 public class Renda {
 
-	private long ID;
+	private long id;
 
-	private String DESCRICAO_RENDA;   
+	private String descricaoRenda;   
 
-	private double VALOR_RENDA;
+	private double valorRenda;
 
-	private Date DATA_RENDA; 
-
-	
+	private Date dataRenda; 
 
 	public long getId() {
-		return ID;
+		return id;
 	}
 
-	public void setId(long ID) {
-		this.ID = ID;
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public String getDESCRICAO_RENDA() {
-		return DESCRICAO_RENDA;
+	public String getDescricaoRenda() {
+		return descricaoRenda;
 	}
 
-	public void setDESCRICAO_RENDA(String DESCRICAO_RENDA) {
-		this.DESCRICAO_RENDA = DESCRICAO_RENDA;
+	public void setDescricaoRenda(String descricaoRenda) {
+		this.descricaoRenda = descricaoRenda;
 	}
 
-	public double getVALOR_RENDA() {
-		return VALOR_RENDA;
+	public double getValorRenda() {
+		return valorRenda;
 	}
 
-	public void setVALOR_RENDA(double VALOR_RENDA) {
-		this.VALOR_RENDA = VALOR_RENDA;
+	public void setValorRenda(double valorRenda) {
+		this.valorRenda = valorRenda;
 	}
 
-
-	public Date getDATA_RENDA() {
-		return DATA_RENDA;
+	public Date getDataRenda() {
+		return dataRenda;
 	}
 
-	public void setDATA_RENDA(Date date) {
-		DATA_RENDA = date;
+	public void setDataRenda(Date dataRenda) {
+		this.dataRenda = dataRenda;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((DATA_RENDA == null) ? 0 : DATA_RENDA.hashCode());
-		result = prime * result + ((DESCRICAO_RENDA == null) ? 0 : DESCRICAO_RENDA.hashCode());
-		result = prime * result + (int) (ID ^ (ID >>> 32));
+		result = prime * result + ((dataRenda == null) ? 0 : dataRenda.hashCode());
+		result = prime * result + ((descricaoRenda == null) ? 0 : descricaoRenda.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
 		long temp;
-		temp = Double.doubleToLongBits(VALOR_RENDA);
+		temp = Double.doubleToLongBits(valorRenda);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
@@ -70,22 +67,26 @@ public class Renda {
 		if (getClass() != obj.getClass())
 			return false;
 		Renda other = (Renda) obj;
-		if (DATA_RENDA == null) {
-			if (other.DATA_RENDA != null)
+		if (dataRenda == null) {
+			if (other.dataRenda != null)
 				return false;
-		} else if (!DATA_RENDA.equals(other.DATA_RENDA))
+		} else if (!dataRenda.equals(other.dataRenda))
 			return false;
-		if (DESCRICAO_RENDA == null) {
-			if (other.DESCRICAO_RENDA != null)
+		if (descricaoRenda == null) {
+			if (other.descricaoRenda != null)
 				return false;
-		} else if (!DESCRICAO_RENDA.equals(other.DESCRICAO_RENDA))
+		} else if (!descricaoRenda.equals(other.descricaoRenda))
 			return false;
-		if (ID != other.ID)
+		if (id != other.id)
 			return false;
-		if (Double.doubleToLongBits(VALOR_RENDA) != Double.doubleToLongBits(other.VALOR_RENDA))
+		if (Double.doubleToLongBits(valorRenda) != Double.doubleToLongBits(other.valorRenda))
 			return false;
 		return true;
 	}
+
+
+
+
 
 
 }

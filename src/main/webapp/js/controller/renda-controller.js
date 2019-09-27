@@ -13,7 +13,7 @@ appEntra21.controller("rendaController", function($scope, $http, $routeParams) {
 		}).then(function(response) {
 			$scope.listaRenda = response.data;
 		}, function(response) {
-			console.log('error - listarRenda');
+			console.log('error - listarRenda')
 		});
 	};
 
@@ -39,7 +39,7 @@ appEntra21.controller("rendaController", function($scope, $http, $routeParams) {
 			$scope.listaRenda.splice(id, 1);
 			$scope.listarRendas();
 		}, function(response) {
-			console.log('error - deleteRenda');
+			console.log('error - deleteRenda ');
 		});
 	};
 
