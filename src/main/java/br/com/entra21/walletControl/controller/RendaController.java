@@ -27,8 +27,8 @@ public class RendaController {
 	@Path("/")
 	public List<Renda> listRenda() {
 		try {
-			RendaDAO rendaDAO = new RendaDAO();
-			return rendaDAO.listar();
+			RendaDAO RendaDAO = new RendaDAO();
+			return RendaDAO.listar();
 		} catch (Exception ex) {
 			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
@@ -40,8 +40,8 @@ public class RendaController {
 	@Path("{ID}/")
 	public Renda getRenda(@PathParam("ID") long ID) {
 		try {
-			RendaDAO rendaDAO = new RendaDAO();
-			return rendaDAO.selecionar(ID);
+			RendaDAO RendaDAO = new RendaDAO();
+			return RendaDAO.selecionar(ID);
 		} catch (Exception ex) {
 			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
@@ -53,8 +53,8 @@ public class RendaController {
 	@Path("/")
 	public Response create(Renda renda) {
 		try {
-			RendaDAO rendaDAO = new RendaDAO();
-			rendaDAO.inserir(renda);
+			RendaDAO RendaDAO = new RendaDAO();
+			RendaDAO.inserir(renda);
 
 			return Response.status(Response.Status.CREATED).build();
 		} catch (Exception ex) {
@@ -70,8 +70,8 @@ public class RendaController {
 		try {
 			
 
-			RendaDAO rendaDAO = new RendaDAO();
-			rendaDAO.alterar(renda);
+			RendaDAO RendaDAO = new RendaDAO();
+			RendaDAO.alterar(renda);
 			return Response.status(Response.Status.NO_CONTENT).build();
 		} catch (Exception ex) {
 			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
@@ -83,8 +83,8 @@ public class RendaController {
 	@Path("{ID}/")
 	public Response delete(@PathParam("ID") long ID) {
 		try {
-			RendaDAO rendaDAO = new RendaDAO();
-			rendaDAO.excluir(ID);
+			RendaDAO RendaDAO = new RendaDAO();
+			RendaDAO.excluir(ID);
 			return Response.status(Response.Status.OK).build();
 		} catch (Exception ex) {
 			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
@@ -96,12 +96,12 @@ public class RendaController {
 	@Path("{ID}/")
 	public Response concluir(@PathParam("ID") long ID) {
 		try {
-			RendaDAO rendaDAO = new RendaDAO();
+			RendaDAO RendaDAO = new RendaDAO();
 
-			Renda c = rendaDAO.selecionar(ID);
+			Renda c = RendaDAO.selecionar(ID);
 		
 
-			rendaDAO.alterar(c);
+			RendaDAO.alterar(c);
 			return Response.status(Response.Status.ACCEPTED).build();
 		} catch (Exception ex) {
 			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
