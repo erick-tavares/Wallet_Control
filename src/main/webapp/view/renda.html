@@ -1,6 +1,6 @@
 <div id="top" class="row">
     <div class="col-sm-3">
-        <h2>Itens</h2>
+        <h2>Rendas</h2>
     </div>
     <div class="col-sm-6">
 
@@ -25,18 +25,18 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>DescriDescri&ccedil;&atilde;oo</th>
+                <th>Descri&ccedil;&atilde;o</th>
                 <th>Valor</th>
-                <th>Data de entrada</th>
+                <th>Data de Entrada</th>
                 <th class="actions">Ações</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="renda in listaRenda | filter: search">
-                <td>{{renda.ID }}</td>
-                <td>{{renda.DESCRICAO_RENDA }}</td>
-                <td>{{renda.VALOR_RENDA }}</td>
-                <td>{{renda.DATA_RENDA }}</td>
+            <tr ng-repeat="despesa in listaRenda | filter: search">
+                <td>{{renda.id }}</td>
+                <td>{{renda.descricaoRenda }}</td>
+                <td>{{renda.valorRenda }}</td>
+                <td>{{renda.dataRenda }}</td>
                 <td class="actions">
                     <a class="btn btn-success btn-xs" href="rendas/{{renda.id}}">Visualizar</a>
                     <a class="btn btn-warning btn-xs" href="rendas/edit/{{renda.id}}"  >Editar</a>
@@ -47,3 +47,5 @@
         </tbody>
     </table>
 </div>
+
+

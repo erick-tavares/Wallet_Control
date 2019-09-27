@@ -25,9 +25,9 @@ public class RendaDAO {
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			stmt.setString(1, renda.getDESCRICAO_RENDA());
-			stmt.setDouble(2, renda.getVALOR_RENDA());
-			stmt.setString(3, renda.getDATA_RENDA().toString());
+			stmt.setString(1, renda.getDescricaoRenda());
+			stmt.setDouble(2, renda.getValorRenda());
+			stmt.setString(3, renda.getDataRenda().toString());
 			stmt.execute();
 			
 			this.conexao.commit();
@@ -49,9 +49,9 @@ public class RendaDAO {
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			stmt.setString(1, renda.getDESCRICAO_RENDA());
-			stmt.setDouble(2, renda.getVALOR_RENDA());
-			stmt.setString(3, renda.getDATA_RENDA().toString());
+			stmt.setString(1, renda.getDescricaoRenda());
+			stmt.setDouble(2, renda.getValorRenda());
+			stmt.setString(3, renda.getDataRenda().toString());
 			stmt.setLong(4, renda.getId());
 
 			linhasAfetadas = stmt.executeUpdate();
@@ -64,13 +64,13 @@ public class RendaDAO {
 		return linhasAfetadas;
 	}
 
-	public int excluir(long ID) throws SQLException, ClassNotFoundException {
+	public int excluir(long id) throws SQLException, ClassNotFoundException {
 		int linhasAlfetadas = 0;
 		String sqlQuery = "DELETE FROM renda WHERE ID = ?";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			stmt.setLong(1, ID);
+			stmt.setLong(1, id);
 			linhasAlfetadas = stmt.executeUpdate();
 			this.conexao.commit();
 		} catch (SQLException e) {
@@ -81,12 +81,12 @@ public class RendaDAO {
 		return linhasAlfetadas;
 	}
 
-	public Renda selecionar(long ID) throws SQLException, ClassNotFoundException {
+	public Renda selecionar(long id) throws SQLException, ClassNotFoundException {
 		String sqlQuery = "SELECT * FROM renda WHERE ID = ?";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			stmt.setLong(1, ID);
+			stmt.setLong(1, id);
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
@@ -122,9 +122,9 @@ public class RendaDAO {
 		Renda c = new Renda();
 
 		c.setId(resultSet.getLong("ID"));
-		c.setDESCRICAO_RENDA(resultSet.getString("DESCRICAO_RENDA"));
-		c.setVALOR_RENDA(resultSet.getDouble("VALOR_RENDA"));
-		c.setDATA_RENDA(resultSet.getDate("DATA_RENDA"));
+		c.setDescricaoRenda(resultSet.getString("DESCRICAO_RENDA"));
+		c.setValorRenda(resultSet.getDouble("VALOR_RENDA"));
+		c.setDataRenda(resultSet.getDate("DATA_RENDA"));
 		
 		return c;
 	}
