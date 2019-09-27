@@ -4,12 +4,12 @@ appEntra21.controller("rendaController", function($scope, $http, $routeParams) {
 	$scope.renda = {};
 	$scope.rendaSelecionado = {};
 	
-	var urlApi = 'http://localhost:8080/walletControl/rest/';
+	var urlApi = 'rest/rendas/';
 	
 	$scope.listarRendas = function() {
 		$http({
 			method : 'GET',
-			url : urlApi + 'rendas/'
+			url : urlApi
 		}).then(function(response) {
 			$scope.listaRenda = response.data;
 		}, function(response) {
@@ -18,19 +18,13 @@ appEntra21.controller("rendaController", function($scope, $http, $routeParams) {
 	};
 
 	$scope.salvarRenda = function() {
-		var metodo = 'POST';
-
-		if ($scope.renda.id){
-			metodo = 'PUT';
-		}
-
 		$http({
-			method : metodo,
-			url : urlApi + 'rendas/',
+			method : 'POST',
+			url : urlApi,
 			data : $scope.renda
 		}).then(function(response) {
 			$scope.listaRenda.push(response.data);
-			$scope.listarRenda();
+			$scope.listarRendas();
 		}, function(response) {
 			console.log('error - salvarRenda');
 		});
@@ -40,7 +34,7 @@ appEntra21.controller("rendaController", function($scope, $http, $routeParams) {
 
 		$http({
 			method : 'DELETE',
-			url : urlApi + 'rendas/' + id
+			url : urlApi + id
 		}).then(function(response) {
 			$scope.listaRenda.splice(id, 1);
 			$scope.listarRendas();
