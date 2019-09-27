@@ -12,8 +12,8 @@ appEntra21.controller("despesaController", function($scope, $http, $routeParams)
 			url : urlApi + 'despesas/'
 		}).then(function(response) {
 			$scope.listaDespesa = response.data;
-		},function(response) {
-			console.log('error - listarDespesa');
+		}, function(response) {
+			console.log('error - listarDespesa')
 		});
 	};
 
@@ -44,7 +44,7 @@ appEntra21.controller("despesaController", function($scope, $http, $routeParams)
 		}).then(function(response) {
 			$scope.listaDespesa.splice(id, 1);
 			$scope.listarDespesas();
-		},  function(response) {
+		}, function(response) {
 			console.log('error - deleteDespesa ');
 		});
 	};
