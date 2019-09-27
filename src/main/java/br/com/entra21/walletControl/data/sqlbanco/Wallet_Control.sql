@@ -44,7 +44,7 @@ insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values 
 insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("salario", 1000.0, 2, "2010-12-10");
 insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("aluguel", 500.0, 2, "2010-12-20");
 insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("salario", 3000.0, 3, "2010-12-15");
-insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("auber", 2000.0, 3, "2010-12-15");
+insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("uber", 2000.0, 3, "2010-12-15");
 
 insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("compra notebook", "lazer", "2015-12-23", 1800.0, "alta", "PAGO", 1, 1);
 insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("compras", "alimentação", "2015-12-20", 250.0, "alta", "PAGO", 1, 1);
