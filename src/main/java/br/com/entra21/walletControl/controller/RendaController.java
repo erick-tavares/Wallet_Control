@@ -68,8 +68,6 @@ public class RendaController {
 	@Path("/")
 	public Response update(Renda renda) {
 		try {
-			
-
 			RendaDAO RendaDAO = new RendaDAO();
 			RendaDAO.alterar(renda);
 			return Response.status(Response.Status.NO_CONTENT).build();

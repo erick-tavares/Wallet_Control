@@ -55,7 +55,8 @@ public class DespesaDAO {
 			stmt.setDouble(4, despesa.getValorDespesa());
 			stmt.setString(5, despesa.getPrioridade());
 			stmt.setString(6, despesa.getStatus().toString());
-			stmt.setString(7, despesa.getPrioridade());
+			stmt.setDouble(7, despesa.getParcela());
+			stmt.setLong(8, despesa.getId());
 
 			linhasAfetadas = stmt.executeUpdate();
 			this.conexao.commit();
@@ -85,7 +86,7 @@ public class DespesaDAO {
 	}
 
 	public Despesa selecionar(long id) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "SELECT * FROM despesa";
+		String sqlQuery = "SELECT * FROM despesa WHERE ID = ?";
 		
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
