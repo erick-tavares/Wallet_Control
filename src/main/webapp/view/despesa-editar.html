@@ -2,33 +2,44 @@
 
 <div class="row">
     <div class="form-group col-md-2">
-        <label for="inputDescricao">Descri&ccedil;&atilde;o</label>
-        <input type="text" class="form-control" id="inputDescricao" placeholder="Digite o valor" ng-model="despesaDetalhe.descricao">
+        <label for="inputID">ID</label>
+        <input type="text" class="form-control" id="inputID" readonly ng-model="despesa.id">
     </div>
-     <div class="form-group col-md-2">
-        <label for="inputCategoria">Categoria</label>
-        <input type="text" class="form-control" id="inputCategoria" placeholder ng-model="despesaDetalhe.categoria">
+    <div class="form-group col-md-4">
+        <label for="inputAssunto">Descrição</label>
+        <input type="text" class="form-control" id="inputDescricao" placeholder="Descrição" ng-model="despesa.descDespesa">
     </div>
-     <div class="form-group col-md-2">
-        <label for="inputVencimento">Vencimento</label>
-        <input type="text" class="form-control" id="inputVencimento" placeholder ng-model="despesaDetalhe.vencimento">
+    <div class="form-group col-md-4">
+        <label for="inputAssunto">Valor</label>
+        <input type="text" class="form-control" id="inputValor" placeholder="Value" ng-model="despesa.valorDespesa">
     </div>
-     <div class="form-group col-md-2">
-        <label for="inputValor">Valor</label>
-        <input type="text" class="form-control" id="inputValor" placeholder ng-model="despesaDetalhe.valor">
+    
+    <div class="form-group col-md-4">
+        <label for="inputAssunto">Data vencimento</label>
+        <input type="text" class="form-control" id="inputDtVenc" placeholder="yyyy-mm-dd" ng-model="despesa.dtVenc">
     </div>
-     <div class="form-group col-md-2">
-        <label for="inputPrioridade">Prioridade</label>
-        <input type="text" class="form-control" id="inputPrioridade" placeholder ng-model="despesaDetalhe.prioridade">
+    
+    <div class="form-group col-md-4">
+        <label for="inputAssunto">Parcelas</label>
+        <input type="text" class="form-control" id="inputParcelas" placeholder="Value" ng-model="despesa.parcela">
     </div>
-     <div class="form-group col-md-2">
-        <label for="inputStatus">Status</label>
-        <input type="text" class="form-control" id="inputStatus" placeholder ng-model="despesaDetalhe.status">
+    
+    <div class="form-group col-md-4">
+        <label for="inputAssunto">Categoria</label>
+        <input type="text" class="form-control" id="inputCategoria" placeholder="Value" ng-model="despesa.catDespesa">
     </div>
-     <div class="form-group col-md-2">
-        <label for="inputParcela">Parcela</label>
-        <input type="text" class="form-control" id="inputParcela" placeholder ng-model="despesaDetalhe.parcela">
+    
+    <div class="form-group col-md-4">
+        <label for="inputAssunto">Prioridade</label>
+        <input type="text" class="form-control" id="inputPrioridade" placeholder="Value" ng-model="despesa.prioridade">
     </div>
+    
+    <div class="form-group col-md-4">
+        <label for="inputAssunto">Status</label>
+        <input type="text" class="form-control" id="inputStatus" placeholder="Value" ng-model="despesa.status">
+    </div>
+</div>
+
 
 <hr />
 

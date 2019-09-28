@@ -85,7 +85,7 @@ public class DespesaDAO {
 	}
 
 	public Despesa selecionar(long id) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "SELECT * FROM despesa";
+		String sqlQuery = "SELECT * FROM despesa WHERE ID = ?";
 		
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
