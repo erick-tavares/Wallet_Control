@@ -9,4 +9,16 @@ appEntra21.controller("despesaDetalheController", function($scope, $http, $route
 		}, function(response) {
 			console.log('error- despesaDetalheController');
 		});
+		$scope.editarDespesa = function() {
+			$http({
+				method : 'PUT',
+				url : url,
+				data : $scope.despesaDetalhe
+			}).then(function(response) {
+				$scope.listaDespesa.push(response.data);
+				$scope.listarDespesa();
+			}, function(response) {
+				console.log('error - salvarDespesa');
+			});
+		};
 });
