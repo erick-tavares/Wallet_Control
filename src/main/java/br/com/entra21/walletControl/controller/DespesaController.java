@@ -69,8 +69,6 @@ public class DespesaController {
 	@Path("/")
 	public Response update(Despesa despesa) {
 		try {
-			despesa.setStatus(Status.PENDENTE);
-
 			DespesaDAO DespesaDAO = new DespesaDAO();
 			DespesaDAO.alterar(despesa);
 			return Response.status(Response.Status.NO_CONTENT).build();
