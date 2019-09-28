@@ -10,7 +10,7 @@ appEntra21.config(function($routeProvider, $locationProvider){
     
     .when("/rendas",{templateUrl:'view/renda.html', controller:'rendaController'})
     .when("/rendas/novo",{templateUrl:'view/renda-novo.html', controller:'rendaController'})
-    .when("/rendas/edit/:id",{templateUrl:'view/renda-novo.html', controller:'rendaDetalheController'})
+    .when("/rendas/edit/:id",{templateUrl:'view/renda-editar.html', controller:'rendaDetalheController'})
     .when("/rendas/:id",{templateUrl:'view/renda-detalhe.html', controller:'rendaDetalheController'}) 
     
     .when("/usuario",{templateUrl:'view/usuario.html', controller:'usuarioController'})

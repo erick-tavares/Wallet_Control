@@ -10,4 +10,21 @@ appEntra21.controller("rendaDetalheController", function($scope, $http, $routePa
 		}, function(response) {
 			console.log('error- rendaDetalheController');
 		});
+		
+		
+		
+		$scope.editarRenda = function() {
+
+
+			$http({
+				method : 'PUT',
+				url : url,
+				data : $scope.rendaDetalhe
+			}).then(function(response) {
+				$scope.listaRenda.push(response.data);
+				$scope.listarRenda();
+			}, function(response) {
+				console.log('error - salvarRenda');
+			});
+		};
 });
