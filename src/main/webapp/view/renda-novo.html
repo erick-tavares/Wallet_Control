@@ -9,13 +9,15 @@
         <label for="inputDescricao">Descri&ccedil;&atilde;o</label>
         <input type="text" class="form-control" id="inputDescricao" placeholder ng-model="rendaDetalhe.descricaoRenda">
     </div>
-     <div class="form-group col-md-2">
-        <label for="inputValor">Valor</label>
-        <input type="text" required="required" maxlength="15" name="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" title="Digite apenas n&uacute;meros" class="form-control" id="inputValor" placeholder ng-model="rendaDetalhe.valorRenda">
+    <div class="form-group col-md-4">
+        <label for="inputAssunto">Valor</label>
+        <input type="number" class="form-control" id="inputStatus" placeholder="Value" ng-model="renda.valorRenda">
     </div>
-         <div class="form-group col-md-2">
-        <label for="inputData">Data de entrada</label>
-        <input type="date" required="required" maxlength="10" name="date" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2019-01-01" max="2100-01-01"class="form-control" id="inputData" placeholder ng-model="rendaDetalhe.dataRenda">
+    
+    <div class="form-group col-md-4">
+        <label for="inputAssunto">Data</label>
+        <input type="date" class="form-control" id="inputStatus" placeholder="yyyy-mm-dd" ng-model="renda.dataRenda">
+
     </div>
     
 </div>
