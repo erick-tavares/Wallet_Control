@@ -1,22 +1,26 @@
 <div id="top" class="row">
+
     <div class="col-sm-3">
         <h2>Despesas</h2>
     </div>
+    
     <div class="col-sm-6">
 
-        <div class="input-group h2">
+        <div class="input-group h2 ">
             <input name="data[search]" class="form-control" ng-model="search" id="search" type="text" placeholder="Pesquisar Itens">
-            <span class="input-group-btn">
-                <button class="btn btn-primary" type="submit" ng-click="listarDespesas()" >
-                    <span class="glyphicon glyphicon-search"></span>
-                </button>
+            <span class="input-group-btn ">
+                <button class="btn btn-primary " type="submit" ng-click="listarDespesas()" >Pesquisar</button>
             </span>
         </div>
-
+       	      
     </div>
+    
+
     <div class="col-sm-3">
         <a href="despesas/novo" class="btn btn-primary pull-right h2">Novo Item</a>
     </div>
+    
+      
 </div> <!-- /#top -->
 
 

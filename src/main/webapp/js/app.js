@@ -14,7 +14,8 @@ appEntra21.config(function($routeProvider, $locationProvider){
     .when("/rendas/:id",{templateUrl:'view/renda-detalhe.html', controller:'rendaDetalheController'}) 
     
     .when("/usuario",{templateUrl:'view/usuario.html', controller:'usuarioController'})
-    
+    .when("/info",{templateUrl:'view/info.html'})
+    .when("/login",{templateUrl:'view/login.html', controller:'loginController'})
     .otherwise({redirectTo:'/'});
 
 	

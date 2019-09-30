@@ -21,7 +21,7 @@ public class DespesaDAO {
 
 	public Long inserir(Despesa despesa) throws SQLException, ClassNotFoundException {
 		Long id = null;
-		String sqlQuery = "INSERT INTO despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ";
+		String sqlQuery = "INSERT INTO despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) VALUES (?, ?, ?, ?, ?, ?, ?, 1) ";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
@@ -32,7 +32,6 @@ public class DespesaDAO {
 			stmt.setString(5, despesa.getPrioridade());
 			stmt.setString(6, despesa.getStatus().toString());
 			stmt.setString(7, despesa.getParcela() + "");
-			stmt.setLong(8, despesa.getIdUsuario());
 			stmt.execute();
 			
 			this.conexao.commit();
@@ -56,7 +55,7 @@ public class DespesaDAO {
 			stmt.setDouble(4, despesa.getValorDespesa());
 			stmt.setString(5, despesa.getPrioridade());
 			stmt.setString(6, despesa.getStatus().toString());
-			stmt.setString(7, despesa.getPrioridade());
+			stmt.setDouble(7, despesa.getParcela());
 			stmt.setLong(8, despesa.getId());
 
 			linhasAfetadas = stmt.executeUpdate();
@@ -87,7 +86,7 @@ public class DespesaDAO {
 	}
 
 	public Despesa selecionar(long id) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "SELECT * FROM despesa";
+		String sqlQuery = "SELECT * FROM despesa WHERE ID = ?";
 		
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
