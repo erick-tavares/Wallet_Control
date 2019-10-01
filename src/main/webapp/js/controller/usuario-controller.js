@@ -1,9 +1,13 @@
-appEntra21.controller("usuarioController", function($scope, $http) {});
+appEntra21.controller("usuarioController", function($scope, $http) {
+});
+
+$scope.listaUsuario = [];
+$scope.usuario = {};
 
 $scope.salvarUsuario = function() {
 	var metodo = 'POST';
 
-	if ($scope.usuario.id){
+	if ($scope.usuario.id) {
 		metodo = 'PUT';
 	}
 
@@ -13,7 +17,7 @@ $scope.salvarUsuario = function() {
 		data : $scope.usuario
 	}).then(function(response) {
 		$scope.listaUsuario.push(response.data);
-		$scope.listarUsuarios();
+		// $scope.listarUsuarios();
 	}, function(response) {
 		console.log('error do salvar');
 		console.log(response.data);
@@ -32,4 +36,26 @@ $scope.verficarUsuario = function() {
 		console.log(response.data);
 		console.log(response.status);
 	});
+
+	$scope.totalDespesas = function() {
+		$http({
+			method : 'GET',
+			url : urlApi + 'despesas/'
+		}).then(function(response) {
+			$scope.totalDespesa = response.data;
+		}, function(response) {
+			console.log('error - totalDespesa')
+		});
+	};
+
+	$scope.totalRendas = function() {
+		$http({
+			method : 'GET',
+			url : urlApi + 'rendas/'
+		}).then(function(response) {
+			$scope.totalRenda = response.data;
+		}, function(response) {
+			console.log('error - totalRenda')
+		});
+	};
 };
