@@ -47,6 +47,19 @@ public class RendaController {
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("soma/")
+	public Double somaRenda() {
+		try {
+			RendaDAO RendaDAO = new RendaDAO();
+			return RendaDAO.somar();
+		} catch (Exception ex) {
+			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
