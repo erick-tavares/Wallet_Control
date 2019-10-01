@@ -121,6 +121,26 @@ public class DespesaDAO {
 			throw e;
 		}
 	}
+	
+	public double somar() throws SQLException, ClassNotFoundException {
+		String sqlQuery = "select sum(VALOR_DESPESA) as soma from despesa";
+
+		try {
+			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
+			ResultSet rs = stmt.executeQuery();
+			
+			double soma = 0;
+
+			if (rs.next()) {
+				soma = rs.getDouble("soma");
+			}
+
+			return soma;
+			
+		} catch (SQLException e) {
+			throw e;
+		}
+	}
 
 	private Despesa parser(ResultSet resultSet) throws SQLException {
 		Despesa d = new Despesa();

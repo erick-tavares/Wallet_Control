@@ -1,8 +1,12 @@
 appEntra21.controller("usuarioController", function($scope, $http) {
-});
 
+
+$scope.totalDespesa = {};
+$scope.totalRenda = {};
 $scope.listaUsuario = [];
 $scope.usuario = {};
+
+var urlApi = 'http://localhost:8080/walletControl/rest/';
 
 $scope.salvarUsuario = function() {
 	var metodo = 'POST';
@@ -37,25 +41,28 @@ $scope.verficarUsuario = function() {
 		console.log(response.status);
 	});
 
-	$scope.totalDespesas = function() {
-		$http({
-			method : 'GET',
-			url : urlApi + 'despesas/'
-		}).then(function(response) {
-			$scope.totalDespesa = response.data;
-		}, function(response) {
-			console.log('error - totalDespesa')
-		});
-	};
-
-	$scope.totalRendas = function() {
-		$http({
-			method : 'GET',
-			url : urlApi + 'rendas/'
-		}).then(function(response) {
-			$scope.totalRenda = response.data;
-		}, function(response) {
-			console.log('error - totalRenda')
-		});
-	};
 };
+
+$scope.totalDespesas = function() {
+	$http({
+		method : 'GET',
+		url : urlApi + 'despesas/soma/'
+	}).then(function(response) {
+		$scope.totalDespesa = response.data;
+	}, function(response) {
+		console.log('error - totalDespesa')
+	});
+};
+
+$scope.totalRendas = function() {
+	$http({
+		method : 'GET',
+		url : urlApi + 'rendas/soma/'
+	}).then(function(response) {
+		$scope.totalRenda = response.data;
+	}, function(response) {
+		console.log('error - totalRenda')
+	});
+};
+
+});
