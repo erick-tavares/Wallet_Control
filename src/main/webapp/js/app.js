@@ -17,10 +17,12 @@ appEntra21.config(function($routeProvider, $locationProvider){
     .when("/info",{templateUrl:'view/info.html'})
     .when("/login",{templateUrl:'view/login.html', controller:'loginController'})
     .otherwise({redirectTo:'/'});
-
+	
 	
 	  // enable html5Mode for pushstate ('#'-less URLs)
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('!');
+    
+    
 	
 }); 

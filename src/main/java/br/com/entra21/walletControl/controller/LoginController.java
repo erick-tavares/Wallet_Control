@@ -19,7 +19,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @SuppressWarnings("deprecation")
-@Path("login")
+@Path("login/")
 public class LoginController {
 	
 
