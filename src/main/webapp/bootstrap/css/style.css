@@ -3,6 +3,14 @@
 	width : 50px;
 }
 
+#pesquisaBotao{
+	margin-top: 3px;
+}
+
+#tabelaPrincipal{
+	margin-top: 20px;
+}
+
 #containerLogin{
 	margin-top: 30px;
 }
