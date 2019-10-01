@@ -1,5 +1,8 @@
 appEntra21.controller("usuarioController", function($scope, $http) {});
 
+$scope.listaUsuario= [];
+$scope.usuario = {};
+
 $scope.salvarUsuario = function() {
 	var metodo = 'POST';
 
@@ -13,7 +16,7 @@ $scope.salvarUsuario = function() {
 		data : $scope.usuario
 	}).then(function(response) {
 		$scope.listaUsuario.push(response.data);
-		$scope.listarUsuarios();
+		//$scope.listarUsuarios();
 	}, function(response) {
 		console.log('error do salvar');
 		console.log(response.data);
