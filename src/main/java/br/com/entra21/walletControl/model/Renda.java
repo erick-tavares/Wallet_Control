@@ -43,6 +43,7 @@ public class Renda {
 
 	public void setDataRenda(Date dataRenda) {
 		this.dataRenda = dataRenda;
+		
 	}
 
 	@Override
