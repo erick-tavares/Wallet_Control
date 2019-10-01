@@ -121,6 +121,11 @@ public class DespesaDAO {
 			throw e;
 		}
 	}
+	
+	public double somar() throws SQLException, ClassNotFoundException {
+		double a = 0;
+		return a;
+	}
 
 	private Despesa parser(ResultSet resultSet) throws SQLException {
 		Despesa d = new Despesa();

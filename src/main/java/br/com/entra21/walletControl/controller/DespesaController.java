@@ -17,6 +17,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import br.com.entra21.walletControl.dao.DespesaDAO;
+import br.com.entra21.walletControl.dao.RendaDAO;
 import br.com.entra21.walletControl.model.Despesa;
 import br.com.entra21.walletControl.model.util.Status;
 
@@ -45,6 +46,19 @@ public class DespesaController {
 			return DespesaDAO.selecionar(id);
 		} catch (Exception ex) {
 			Logger.getLogger(DespesaController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("soma/")
+	public Double somaDespesa() {
+		try {
+			DespesaDAO DespesaDAO = new DespesaDAO();
+			return DespesaDAO.somar();
+		} catch (Exception ex) {
+			Logger.getLogger(RendaController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
