@@ -118,6 +118,7 @@ public class RendaDAO {
 		}
 	}
 	
+
 	public double somar() throws SQLException, ClassNotFoundException {
 		String sqlQuery = "select sum(VALOR_RENDA) as soma from renda";
 
@@ -125,11 +126,13 @@ public class RendaDAO {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			ResultSet rs = stmt.executeQuery();
 			
+
 			double soma = 0;
 
 			if (rs.next()) {
 				soma = rs.getDouble("soma");
 			}
+
 
 			return soma;
 			
