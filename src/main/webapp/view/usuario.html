@@ -1,9 +1,21 @@
 <div>
 
-<button class="btn btn-primary" type="submit" ng-click="totalDespesas()" >Total despesas</button>
-<button class="btn btn-primary" type="submit" ng-click="totalRendas()" >Total rendas</button>
+<div class="col-sm-6">
 
-	
-	{{totalDespesa }}
-	{{totalRenda }}
+        <div class="input-group h2 ">
+
+            <button class="btn btn-primary" id="pesquisaBotao" type="submit" ng-click="totalDespesas()" >Resultado das Despesas</button>
+
+			<span class="label label-default">	{{totalDespesa }}</span>
+        </div>
+        <div class="input-group h2 ">
+
+            <button class="btn btn-primary" id="pesquisaBotao"  ng-click="totalRendas()" >Resultado das Rendas</button>
+
+            <span class="label label-default">	{{totalRenda }}</span>
+
+        </div>
+       	      
+    </div>
+
 </div>
