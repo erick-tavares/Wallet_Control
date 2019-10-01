@@ -1,10 +1,12 @@
 appEntra21.controller("usuarioController", function($scope, $http) {
-});
+
 
 $scope.totalDespesa = {};
 $scope.totalRenda = {};
 $scope.listaUsuario = [];
 $scope.usuario = {};
+
+var urlApi = 'http://localhost:8080/walletControl/rest/';
 
 $scope.salvarUsuario = function() {
 	var metodo = 'POST';
@@ -62,3 +64,5 @@ $scope.totalRendas = function() {
 		console.log('error - totalRenda')
 	});
 };
+
+});
