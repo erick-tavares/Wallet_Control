@@ -37,6 +37,7 @@ public class LoginController {
 			Usuario usuarioAtenticado = usuAutenticar.autenticarLogin(usuario);
 
 			if (usuarioAtenticado == null) {
+				
 				throw new WebApplicationException("Usuario não encontrado");
 			}
 

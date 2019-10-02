@@ -9,7 +9,7 @@ appEntra21.controller("loginController", function($scope, $http) {
 		function(response) {
 			console.log($scope.usuario);
 			
-			$state.go('/rendas');
+			$http.go('rendas');
 			console.log("sucesso " + response);
 		},
 		function(response) {
