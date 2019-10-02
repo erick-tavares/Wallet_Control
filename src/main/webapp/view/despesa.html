@@ -1,0 +1,62 @@
+<div id="top" class="row">
+
+    <div class="col-sm-3">
+        <h2>Despesas</h2>
+    </div>
+    
+    <div class="col-sm-6">
+
+        <div class="input-group h2 ">
+            <input name="data[search]" class="form-control" ng-model="search" id="search" type="text" placeholder="Pesquisar Itens">
+            <span class="input-group-btn ">
+                <button class="btn btn-primary" id="pesquisaBotao" type="submit" ng-click="listarDespesas()" >Pesquisar</button>
+            </span>
+        </div>
+       	      
+    </div>
+    
+
+    <div class="col-sm-3">
+        <a href="despesas/novo" class="btn btn-primary pull-right h2">Novo Item</a>
+    </div>
+    
+      
+</div> <!-- /#top -->
+
+
+<div class="table-responsive col-md-12">
+    <table class="table table-hover table-bordered" format="dd/MM/yyyy" id="tabelaPrincipal" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descri&ccedil;&atilde;o</th>
+                <th>Categoria</th>
+                <th>Vencimento</th>
+                <th>Valor</th>
+                <th>Prioridade</th>
+                <th>Status</th>
+                <th>Parcela</th>
+                <th class="actions">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="despesa in listaDespesa | filter: search">
+                <td>{{despesa.id }}</td>
+                <td>{{despesa.descDespesa }}</td>
+                <td>{{despesa.catDespesa }}</td>
+                <td>{{despesa.dtVenc | date: 'dd/MM/yyyy'}}</td>
+                <td>R$ {{despesa.valorDespesa | number: 2}}</td>
+                <td>{{despesa.prioridade }}</td>
+                <td>{{despesa.status }}</td>
+                <td>{{despesa.parcela }}</td>
+                <td class="actions">
+                    <a class="btn btn-success btn-xs" href="despesas/{{despesa.id}}">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="despesas/edit/{{despesa.id}}"  >Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal"
+                        ng-click="deleteDespesa(despesa.id)">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

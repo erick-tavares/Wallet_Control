@@ -1,0 +1,49 @@
+<div id="top" class="row">
+    <div class="col-sm-3">
+        <h2>Rendas</h2>
+    </div>
+    <div class="col-sm-6">
+
+        <div class="input-group h2">
+            <input name="data[search]" class="form-control" ng-model="search" id="search" type="text" placeholder="Pesquisar Itens">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" id="pesquisaBotao" type="submit" ng-click="listarRendas()" >Pesquisar</button>
+            </span>
+        </div>
+
+    </div>
+    <div class="col-sm-3">
+        <a href="rendas/novo" class="btn btn-primary pull-right h2">Novo Item</a>
+    </div>
+</div> <!-- /#top -->
+
+
+<div class="table-responsive col-md-12">
+    <table class="table table-hover table-bordered" id="tabelaPrincipal" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descri&ccedil;&atilde;o</th>
+                <th>Valor</th>
+                <th>Data de entrada</th>
+                <th class="actions">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="renda in listaRenda | filter: search">
+                <td>{{renda.id }}</td>
+                <td>{{renda.descricaoRenda }}</td>
+                <td>R$ {{renda.valorRenda | number: 2}}</td>
+                <td>{{renda.dataRenda | date: 'dd/MM/yyyy'}}</td>
+                <td class="actions">
+                    <a class="btn btn-success btn-xs" href="rendas/{{renda.id}}">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="rendas/edit/{{renda.id}}"  >Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal"
+                        ng-click="deleteRenda(renda.id)">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

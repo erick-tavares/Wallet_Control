@@ -1,0 +1,26 @@
+<h3 class="page-header">Editar Renda #{{rendaDetalhe.id}}</h3>
+
+<div class="row">
+
+    <div class="form-group col-md-8">
+        <label for="inputDescricao">Descri&ccedil;&atilde;o</label>
+        <input type="text" class="form-control" id="inputDescricao" placeholder ng-model="rendaDetalhe.descricaoRenda">
+    </div>
+     <div class="form-group col-md-4">
+        <label for="inputValor">Valor</label>
+        <input type="text" ng-model="rendaDetalhe.valorRenda" title="Digite apenas n&uacute;meros" class="form-control" id="inputValor" placeholder >
+     </div>
+    <div class="form-group col-md-4">
+        <label for="inputData">Data de entrada</label>
+        <input type="date" class="form-control" id="inputData" placeholder= "dd-mm-aaaa" ng-model="rendaDetalhe.dataRenda">
+    </div>
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="rendas" class="btn btn-primary" ng-click="editarRenda()" >Atualizar </a>
+        <a href="rendas" class="btn btn-default">Cancelar</a>
+    </div>
+</div>
+
+</div>

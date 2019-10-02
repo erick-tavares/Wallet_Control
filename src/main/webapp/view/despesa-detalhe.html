@@ -1,0 +1,51 @@
+<h3 class="page-header">Visualizar Item #{{despesaDetalhe.id}}</h3>
+
+  <div class="row">
+    <div class="col-md-8">
+      <p><strong>ID</strong></p>
+  	  <p>{{despesaDetalhe.id}}</p>
+    </div>
+
+	<div class="col-md-8">
+      <p><strong>Descri&ccedil;&atilde;o</strong></p>
+  	  <p>{{despesaDetalhe.descDespesa}}</p>
+    </div>
+        
+    <div class="col-md-8">
+      <p><strong>Categoria</strong></p>
+  	  <p> {{despesaDetalhe.catDespesa}}</p>
+    </div>
+
+    <div class="col-md-8">
+      <p><strong>Valor</strong></p>
+  	  <p> R$ {{despesaDetalhe.valorDespesa | number: 2}}</p>
+    </div>
+    
+     <div class="col-md-8">
+      <p><strong>Data de vencimento</strong></p>
+  	  <p> {{despesaDetalhe.dtVenc | date: 'dd/MM/yyyy'}}</p>
+    </div>
+    
+    <div class="col-md-8">
+      <p><strong>Parcelas</strong></p>
+  	  <p> {{despesaDetalhe.parcela}}</p>
+    </div>
+
+    <div class="col-md-8">
+      <p><strong>Prioridade</strong></p>
+  	  <p> {{despesaDetalhe.prioridade}}</p>
+    </div>
+    
+    <div class="col-md-8">
+      <p><strong>Status</strong></p>
+  	  <p> {{despesaDetalhe.status}}</p>
+    </div>	  
+ </div>
+
+ <hr />
+ <div id="actions" class="row">
+   <div class="col-md-12">
+     <a href="despesas/edit/{{despesaDetalhe.id}}" ng-click="salvarDespesa(despesaDetalhe)" class="btn btn-primary">Editar</a>
+	 <a href="despesas" class="btn btn-default">Fechar</a>
+   </div>
+ </div> 
