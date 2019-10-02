@@ -1,6 +1,5 @@
 appEntra21.controller("usuarioController", function($scope, $http) {
 
-
 $scope.totalDespesa = {};
 $scope.totalRenda = {};
 $scope.listaUsuario = [];

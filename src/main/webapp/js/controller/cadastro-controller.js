@@ -1,4 +1,4 @@
-appEntra21.controller("usuarioController", function($scope, $http) {
+appEntra21.controller("cadastroController", function($scope, $http) {
 
 $scope.listaUsuario = [];
 $scope.usuario = {};
