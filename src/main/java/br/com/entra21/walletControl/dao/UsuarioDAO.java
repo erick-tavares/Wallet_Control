@@ -25,8 +25,8 @@ public class UsuarioDAO {
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			stmt.setString(1, usuario.getEmail());
-			stmt.setString(2, usuario.getNome());
-			stmt.setString(3, usuario.getSenha());
+			stmt.setString(2, usuario.getSenha());
+			stmt.setString(3, usuario.getNome());
 			stmt.execute();
 			
 			this.conexao.commit();
