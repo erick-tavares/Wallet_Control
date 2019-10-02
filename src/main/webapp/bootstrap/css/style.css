@@ -1,3 +1,26 @@
+#title{
+	margin-bottom: -20px;
+}
+
+#imgIndex{
+	margin-left: 40%;
+	margin-top: 30px;
+	margin-right: 50%;
+	max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+    border:3px solid #000;
+}
+
+#subtitle{
+	margin : auto;
+}
+
+#button1{
+	margin-top: 70px;
+	width: 200px;
+}
 
 #id{
 	width : 50px;

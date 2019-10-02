@@ -1,28 +1,18 @@
 <h3 class="page-header">Adicionar Renda</h3>
 
 <div class="row">
-    <div class="form-group col-md-2">
-        <label for="inputID">ID</label>
-        <input type="text" class="form-control" id="inputID" readonly ng-model="renda.id">
-    </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-8">
         <label for="inputDescricao">Descri&ccedil;&atilde;o</label>
         <input type="text" class="form-control" id="inputDescricao" placeholder ng-model="renda.descricaoRenda">
     </div>
+     <div class="form-group col-md-4">
+        <label for="inputValor">Valor</label>
+        <input type="text" ng-model="renda.valorRenda" money-mask title="Digite apenas n&uacute;meros" class="form-control" id="inputValor" placeholder >
+     </div>
     <div class="form-group col-md-4">
-        <label for="inputAssunto">Valor</label>
-        <input type="number" class="form-control" id="inputStatus" placeholder="Value" ng-model="renda.valorRenda">
+        <label for="inputData">Data de entrada</label>
+        <input type="date" class="form-control" id="inputData" placeholder="dd-mm-aaaa" ng-model="renda.dataRenda">
     </div>
-    
-    <div class="form-group col-md-4">
-        <label for="inputAssunto">Data</label>
-        <input type="date" class="form-control" id="inputStatus" placeholder="yyyy-mm-dd" ng-model="renda.dataRenda">
-
-    </div>
-    
-</div>
-
-<hr />
 
 <div class="row">
     <div class="col-md-12">

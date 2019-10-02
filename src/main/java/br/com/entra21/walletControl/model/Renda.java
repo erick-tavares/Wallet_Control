@@ -2,7 +2,6 @@ package br.com.entra21.walletControl.model;
 
 import java.sql.Date;
 
-
 public class Renda {
 
 	private long id;
@@ -12,7 +11,7 @@ public class Renda {
 	private double valorRenda;
 
 	private Date dataRenda; 
-
+	
 	public long getId() {
 		return id;
 	}
@@ -43,6 +42,7 @@ public class Renda {
 
 	public void setDataRenda(Date dataRenda) {
 		this.dataRenda = dataRenda;
+		
 	}
 
 	@Override
