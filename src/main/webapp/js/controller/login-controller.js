@@ -1,24 +1,57 @@
-appEntra21.controller("loginController", function($scope, $http) {
+appEntra21.controller("loginController", function ($scope, $http, $window, $location) {
 
-	$scope.usuario={};
-	var urlApi = 'http://localhost:8080/walletControl/rest/'
-	
-	$scope.autenticar = function() {
-		 
-		$http.post(urlApi+ "login/autenticar/", $scope.usuario).then(
-		function(response) {
-			console.log($scope.usuario);
-			
-			$http.go('rendas');
-			console.log("sucesso " + response);
-		},
-		function(response) {
-			console.log($scope.usuario);
-			console.log("falha " + response);
-		});
-		
-	}
-	
-	
-	
-}); 
+    $scope.usuario = {};
+    var urlApi = 'rest/login/autenticar/'
+
+    $scope.autenticar = function () {
+
+
+
+        $http.post(urlApi, $scope.usuario).then(
+            function (response) {
+
+                console.log(response.data);
+
+                if (response.data.email == $scope.usuario.email &&
+                    response.data.senha == $scope.usuario.senha) {
+                    $location.path('despesas');
+
+                    console.log("indo para outra tela");
+                }
+
+            },
+            function (response) {
+                console.log("falha " + response);
+            });
+
+
+
+
+
+
+    }
+});
+
+appEntra21.controller("loginController", function ($scope, $http, $window, $location) {
+
+    $scope.usuario = {};
+    var urlApi = 'rest/login/autenticar/'
+
+    $scope.autenticar = function () {
+
+        $http.post(urlApi, $scope.usuario).then(
+            function (response) {
+
+                console.log(response.data);
+
+                if (response.data.email == $scope.usuario.email &&
+                    response.data.senha == $scope.usuario.senha) {
+                    $location.path('despesas');
+                }
+            },
+            function (response) {
+                console.log("falha " + response);
+            });
+    }
+});
+
