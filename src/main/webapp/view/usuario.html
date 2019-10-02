@@ -4,20 +4,20 @@
 	
 	        <div class="input-group h2 ">
 	
-	            <button class="btn btn-primary" id="pesquisaBotao" type="submit" ng-click="totalDespesas()" >Resultado das Despesas</button>
+	            <button class="btn btn-primary" id="pesquisaBotao" type="submit" ng-click="totalDespesas()" >Total das Despesas</button>
 	
-				<span class="label label-default">	{{totalDespesa }}</span>
+				<span class="label label-default">R$	{{totalDespesa }},00</span>
 	        </div>
 	        <div class="input-group h2 ">
 	
-	            <button class="btn btn-primary" id="pesquisaBotao"  ng-click="totalRendas()" >Resultado das Rendas</button>
+	            <button class="btn btn-primary" id="pesquisaBotao"  ng-click="totalRendas()" >Total das Rendas</button>
 	
-	            <span class="label label-default">	{{totalRenda }}</span>
+	            <span class="label label-default">R$	{{totalRenda }},00</span>
 	
 	        </div>
 	        <br>
 	        <div class="input-group h1">
-				Resultado: <span class="label label-warning estilo1">	{{totalRenda - totalDespesa}}</span>
+				Estimativa de saldo: <span class="label label-warning estilo1">R$ {{totalRenda - totalDespesa}},00</span>
 			</div>
 	       	      
 	</div>
