@@ -21,6 +21,7 @@ appEntra21.controller("loginController", function($scope, $http, $window,
 				}, function(response) {
 					console.log(response.status);
 					if (response.status == '500') {
+						alert("Verificar usuario ou senha")
 						$scope.mensagem = "Verificar usuario ou senha"
 					}
 				});
