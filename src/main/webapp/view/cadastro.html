@@ -19,7 +19,7 @@
           </p>
             
           <p> 
-            <a href="login" type="button" class="btn btn-primary" ng-click="salvarUsuario()">Cadastrar</a>
+            <button href="login" type="button" class="btn btn-primary" ng-click="salvarUsuario()" ng-disabled="!usuario.senha || !usuario.email || !usuario.nome">Cadastrar</button>
             <a href="login" type="button" class="btn btn-default">Cancelar</a>
 
           </p>
