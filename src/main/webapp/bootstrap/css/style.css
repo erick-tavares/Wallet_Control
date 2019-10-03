@@ -1,3 +1,15 @@
+#telaInfo{
+	margin-top: 20px;
+	text-align: left;
+}
+
+#imgInfo{
+	max-width:40px;
+    max-height:30px;
+    width: auto;
+    height: auto;
+}
+
 #title{
 	margin-bottom: -20px;
 }
