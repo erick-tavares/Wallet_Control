@@ -13,12 +13,12 @@
 
     <div class="col-md-8">
       <p><strong>Valor </strong></p>
-  	  <p> {{rendaDetalhe.valorRenda}}</p>
+  	  <p> R$ {{rendaDetalhe.valorRenda | number: 2}}</p>
     </div>
     
      <div class="col-md-8">
       <p><strong>Data de entrada </strong></p>
-  	  <p> {{rendaDetalhe.dataRenda}}</p>
+  	  <p> {{rendaDetalhe.dataRenda | date: 'dd/MM/yyyy'}}</p>
     </div> 
  </div>
 

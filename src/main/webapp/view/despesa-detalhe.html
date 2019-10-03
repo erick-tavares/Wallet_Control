@@ -18,12 +18,12 @@
 
     <div class="col-md-8">
       <p><strong>Valor</strong></p>
-  	  <p> {{despesaDetalhe.valorDespesa}}</p>
+  	  <p> R$ {{despesaDetalhe.valorDespesa | number: 2}}</p>
     </div>
     
      <div class="col-md-8">
       <p><strong>Data de vencimento</strong></p>
-  	  <p> {{despesaDetalhe.dtVenc}}</p>
+  	  <p> {{despesaDetalhe.dtVenc | date: 'dd/MM/yyyy'}}</p>
     </div>
     
     <div class="col-md-8">

@@ -84,6 +84,11 @@ public class Renda {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Renda [id=" + id + ", descricaoRenda=" + descricaoRenda + ", valorRenda=" + valorRenda + ", dataRenda="
+				+ dataRenda + "]";
+	}
 
 
 

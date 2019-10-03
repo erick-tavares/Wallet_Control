@@ -33,8 +33,8 @@
             <tr ng-repeat="renda in listaRenda | filter: search">
                 <td>{{renda.id }}</td>
                 <td>{{renda.descricaoRenda }}</td>
-                <td>{{renda.valorRenda }}</td>
-                <td>{{renda.dataRenda }}</td>
+                <td>R$ {{renda.valorRenda | number: 2}}</td>
+                <td>{{renda.dataRenda | date: 'dd/MM/yyyy'}}</td>
                 <td class="actions">
                     <a class="btn btn-success btn-xs" href="rendas/{{renda.id}}">Visualizar</a>
                     <a class="btn btn-warning btn-xs" href="rendas/edit/{{renda.id}}"  >Editar</a>

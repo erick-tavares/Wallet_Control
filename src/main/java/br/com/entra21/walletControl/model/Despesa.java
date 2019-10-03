@@ -150,5 +150,12 @@ public class Despesa {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Despesa [parcela=" + parcela + ", idUsuario=" + idUsuario + ", id=" + id + ", valorDespesa="
+				+ valorDespesa + ", descDespesa=" + descDespesa + ", catDespesa=" + catDespesa + ", prioridade="
+				+ prioridade + ", dtVenc=" + dtVenc + ", status=" + status + "]";
+	}
 	
 }
