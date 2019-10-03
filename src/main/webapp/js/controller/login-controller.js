@@ -27,7 +27,7 @@ appEntra21.controller("loginController", function($scope, $http, $window,
 
 		this.logout = function() {
 			$rootScope.response.data = null;
-			$location.path('login')
+			$location.path('indexview')
 		}
 	}
 });
