@@ -2,7 +2,7 @@ appEntra21.controller("loginController", function($scope, $http, $window,
 		$location) {
 
 	$scope.usuario = {};
-	$scope.mensagem = ""
+	$scope.mensagem = "";
 	var urlApi = 'rest/login/autenticar/'
 
 	$scope.autenticar = function() {
@@ -21,8 +21,8 @@ appEntra21.controller("loginController", function($scope, $http, $window,
 				}, function(response) {
 					console.log(response.status);
 					if (response.status == '500') {
-						alert("Verificar usuario ou senha")
-						$scope.mensagem = "Verificar usuario ou senha"
+						alert("Verificar usuario ou senha");
+						$scope.usuario = {};
 					}
 				});
 
