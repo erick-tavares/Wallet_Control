@@ -1,3 +1,5 @@
+CREATE database wallet_control;
+
 CREATE TABLE usuario (
   ID int(11) NOT NULL AUTO_INCREMENT,
   EMAIL varchar(80) CHARACTER SET latin1 NOT NULL,
