@@ -39,19 +39,19 @@ insert into usuario (EMAIL, NOME, SENHA) values ("rafa@gmail.com", "Rafael", "12
 insert into usuario (EMAIL, NOME, SENHA) values ("lucas@gmail.com", "Lucas", "abc");
 insert into usuario (EMAIL, NOME, SENHA) values ("gabriel@gmail.com", "Gabriel", "senhaAPI");
 
-insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("salario", 1000.0, 1, "2010-12-10");
-insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("venda do PC", 6000.0, 1, "2010-12-20");
-insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("salario", 1000.0, 2, "2010-12-10");
-insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("aluguel", 500.0, 2, "2010-12-20");
-insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("salario", 3000.0, 3, "2010-12-15");
-insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("uber", 2000.0, 3, "2010-12-15");
+insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("Salario", 1000.0, 1, "2010-12-10");
+insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("Venda do PC", 6000.0, 1, "2010-12-20");
+insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("Salario", 1000.0, 1, "2010-12-10");
+insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("Aluguel", 500.0, 1, "2010-12-20");
+insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("Salario", 3000.0, 1, "2010-12-15");
+insert into renda (DESCRICAO_RENDA, VALOR_RENDA, ID_USUARIO, DATA_RENDA) values ("Uber", 2000.0, 1, "2010-12-15");
 
-insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("compra notebook", "lazer", "2015-12-23", 1800.0, "alta", "PAGO", 1, 1);
-insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("compras", "alimentação", "2015-12-20", 250.0, "alta", "PAGO", 1, 1);
-insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("gasolina", "transporte", "2015-12-15", 300.0, "alta", "PAGO", 2, 1);
-insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("compra geladeira", "lazer", "2015-10-11", 2200.0, "alta", "PENDENTE", 24, 2);
-insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("parcela moto", "transporte", "2015-12-20", 400.0, "alta", "ATRASADO", 36, 2);
-insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("gasolina", "transporte", "2015-12-15", 100.0, "alta", "PAGO", 1, 2);
-insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("compras mercado", "alimentação", "2015-09-11", 45.0, "média", "PAGO", 1, 3);
-insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("passes ônibus", "transporte", "2015-08-20", 100.0, "alta", "PENDENTE", 1, 3);
-insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("lanche", "alimentação", "2015-12-15", 50.0, "média", "PAGO", 1, 3);
+insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("Compra notebook", "lazer", "2015-12-23", 1800.0, "Pouco urgente", "PAGO", 1, 1);
+insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("Compras", "alimentação", "2015-12-20", 250.0, "Urgente", "PAGO", 1, 1);
+insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("Gasolina", "transporte", "2015-12-15", 300.0, "Urgente", "PAGO", 2, 1);
+insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("Compra geladeira", "lazer", "2015-10-11", 2200.0, "Normal", "PENDENTE", 24, 1);
+insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("Parcela moto", "transporte", "2015-12-20", 400.0, "Normal", "ATRASADO", 36, 1);
+insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("Gasolina", "transporte", "2015-12-15", 100.0, "Urgente", "PAGO", 1, 1);
+insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("Compras mercado", "alimentação", "2015-09-11", 45.0, "Pouco urgente", "PAGO", 1, 1);
+insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("Passes ônibus", "transporte", "2015-08-20", 100.0, "Urgente", "PENDENTE", 1, 1);
+insert into despesa (DESCRICAO_DESPESA, CATEGORIA, DATA_VENC, VALOR_DESPESA, PRIORIDADE, STATUS, PARCELA, ID_USUARIO) values ("Lanche", "alimentação", "2015-12-15", 50.0, "Pouco urgente", "PAGO", 1, 1);
